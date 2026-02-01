@@ -1,0 +1,14 @@
+{
+  "name": "auracore-website",
+  "version": "1.0.0",
+  "description": "AuraCore Labs - Digital Innovation Hub",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000 -o",
+    "build": "echo 'Static site'",
+    "deploy": "vercel"
+  },
+  "keywords": ["auracore", "digital", "innovation", "ai", "prototype"],
+  "author": "AuraCore Labs",
+  "license": "MIT"
+}
