@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AuraCore Custom Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-950 text-white font-sans;
+  }
+}
+
+@layer components {
+  .aura-gradient {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600;
+  }
+  
+  .card-hover {
+    @apply hover:border-purple-500 transition-colors duration-300;
+  }
+  
+  /* Logo breathing utility: maps existing class to Tailwind animation */
+  .logo-breathe {
+    @apply animate-breathe;
+  }
+  
+  /* Enhanced card hover with scale effect */
+  article {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+}
+
+/* Accessibility improvements */
+@layer utilities {
+  *:focus {
+    @apply outline-2 outline-indigo-500 outline-offset-2;
+  }
+}
+
+/* Prefers Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
