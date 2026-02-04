@@ -32,46 +32,12 @@
     <link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/dnbahfdbd/image/upload/v1769954186/logo2_womokl.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dnbahfdbd/image/upload/v1769954186/logo2_womokl.png">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Vite CSS (optimized with tree-shaking) -->
+    <link rel="stylesheet" href="/src/style.css">
     
     <!-- Preload untuk performance -->
     <link rel="preconnect" href="https://res.cloudinary.com">
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
-    <style>
-        .aura-gradient {
-            background: radial-gradient(circle at center, #4f46e5 0%, #7e22ce 100%);
-        }
-        @keyframes breathe {
-            0%, 100% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 25px rgba(79, 70, 229, 0.45));
-            }
-            50% {
-                transform: scale(1.05);
-                filter: drop-shadow(0 0 35px rgba(79, 70, 229, 0.75));
-            }
-        }
-        .logo-breathe {
-            animation: breathe 3s ease-in-out infinite;
-        }
-        
-        /* Accessibility improvements */
-        *:focus {
-            outline: 2px solid #4f46e5;
-            outline-offset: 2px;
-        }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* High contrast text for accessibility */
-        .text-gray-400 {
-            color: #9ca3af;
-        }
-    </style>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -92,9 +58,11 @@
         "logo": "https://res.cloudinary.com/dnbahfdbd/image/upload/v1769954186/logo2_womokl.png",
         "description": "Hub inovasi digital untuk prototipe cerdas dan solusi berbasis data",
         "sameAs": [
-            "https://twitter.com/auracore",
-            "https://linkedin.com/company/auracore"
-        ]
+                "https://x.com/AuraCore9593",
+                "https://www.instagram.com/auracore.id/",
+                "https://www.tiktok.com/@auracore.id",
+                "https://linkedin.com/company/auracore"
+            ]
     }
     </script>
 </head>
@@ -104,16 +72,18 @@
 
     <header class="py-12 px-6 text-center sm:py-16 md:py-20">
         <div class="mx-auto mb-8 w-48 h-48 flex items-center justify-center bg-transparent sm:w-56 sm:h-56 md:w-72 md:h-72">
-            <img 
-                src="https://res.cloudinary.com/dnbahfdbd/image/upload/v1769952310/auracore_logo.png" 
-                alt="AuraCore Labs - Digital Innovation Hub Logo dengan animasi breathing effect" 
+            <img
+                src="https://res.cloudinary.com/dnbahfdbd/image/upload/v1769952310/auracore_logo.png"
+                alt=""
+                aria-hidden="true"
                 class="w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 object-cover logo-breathe"
                 loading="lazy"
                 width="288"
                 height="288"
             >
         </div>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">AuraCore</h1>
+        <!-- Heading preserved for accessibility/SEO but visually hidden because logo already contains text -->
+        <h1 class="sr-only">AuraCore</h1>
         <p class="text-gray-300 text-base sm:text-lg md:text-lg max-w-2xl mx-auto">
             Wadah inovasi digital untuk prototipe cerdas dan solusi berbasis data. 
             Dikembangkan melalui kolaborasi kreativitas manusia dan AI.
@@ -124,7 +94,7 @@
         <div class="grid md:grid-cols-3 gap-8">
             
             <!-- AuraCore Health Card -->
-            <article class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-purple-500 transition">
+            <article class="animate-slide-up-1 bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-purple-500 transition">
                 <div class="text-purple-500 mb-4 font-bold text-sm uppercase tracking-widest text-center">AuraCore Health</div>
                 <h2 class="text-xl font-bold mb-3 text-center">Management Sistem RS</h2>
                 <p class="text-gray-300 text-sm leading-relaxed mb-6 text-center italic border-b border-gray-800 pb-4">
@@ -134,7 +104,7 @@
             </article>
 
             <!-- AuraCore Sentinel Card -->
-            <article class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-blue-500 transition">
+            <article class="animate-slide-up-2 bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-blue-500 transition">
                 <div class="text-blue-500 mb-4 font-bold text-sm uppercase tracking-widest text-center">AuraCore Sentinel</div>
                 <h2 class="text-xl font-bold mb-3 text-center">SimpanPassword</h2>
                 <p class="text-gray-300 text-sm leading-relaxed mb-6 text-center italic border-b border-gray-800 pb-4">
@@ -144,21 +114,30 @@
                     href="https://simpanpassword.my.id" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    class="block text-center bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="block text-center bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-500 hover:shadow-lg hover:shadow-blue-500/50"
                     aria-label="Buka Aplikasi SimpanPassword di tab baru"
                 >
-                    Buka Aplikasi
+                    Buka Aplikasi →
                 </a>
             </article>
 
-            <!-- AuraCore Gear Card -->
-            <article class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-green-500 transition">
+            <!-- AuraCore Gear Card (updated to AuraCore Sentinel) -->
+            <article class="animate-slide-up-3 bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-green-500 transition">
                 <div class="text-green-500 mb-4 font-bold text-sm uppercase tracking-widest text-center">AuraCore Gear</div>
-                <h2 class="text-xl font-bold mb-3 text-center">ADB Tool & Service Mgmt</h2>
+                <h2 class="text-xl font-bold mb-3 text-center">AuraCore Sentinel</h2>
                 <p class="text-gray-300 text-sm leading-relaxed mb-6 text-center italic border-b border-gray-800 pb-4">
-                    "Utilitas teknis tingkat lanjut untuk optimasi dan servis perangkat."
+                    Professional Android malware scanner & device manager — single-file Windows executable.
                 </p>
-                <p class="text-xs text-gray-500 text-center">Status: v3.0 Ultimate</p>
+                <p class="text-xs text-gray-500 text-center mb-4">Version: v1.0.0 · Windows (x64) · ~20.7 MB</p>
+                <a
+                    href="https://github.com/auracorelabs-id/auracore-sentinel/releases"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block text-center bg-green-600 hover:bg-green-700 text-white text-xs font-bold py-2 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-green-500 hover:shadow-lg hover:shadow-green-500/50"
+                    aria-label="Download AuraCore Sentinel on GitHub Releases"
+                >
+                    Download on GitHub →
+                </a>
             </article>
 
         </div>
@@ -176,12 +155,16 @@
         <nav class="mb-6 flex flex-wrap justify-center gap-6 text-sm">
             <a href="#privacy" class="text-gray-400 hover:text-gray-300 transition">Privacy Policy</a>
             <a href="#terms" class="text-gray-400 hover:text-gray-300 transition">Terms of Service</a>
-            <a href="mailto:contact@auracore.id" class="text-gray-400 hover:text-gray-300 transition">Contact</a>
-            <a href="https://twitter.com/auracore" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 transition">Twitter</a>
+            <a href="mailto:auracore.labs@gmail.com" class="text-gray-400 hover:text-gray-300 transition">Email</a>
+            <a href="https://x.com/AuraCore9593" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 transition">X</a>
+            <a href="https://www.instagram.com/auracore.id/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 transition">Instagram</a>
+            <a href="https://www.tiktok.com/@auracore.id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 transition">TikTok</a>
             <a href="https://linkedin.com/company/auracore" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 transition">LinkedIn</a>
         </nav>
         <p class="text-gray-600 text-xs">&copy; 2026 AuraCore Labs. Build in Public.</p>
     </footer>
 
+    <!-- Vite Script (HMR in development, not included in production build) -->
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>
