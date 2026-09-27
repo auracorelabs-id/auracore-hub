@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://auracore.vercel.app/sitemap.xml
+Sitemap: https://www.auracore.my.id/sitemap.xml
