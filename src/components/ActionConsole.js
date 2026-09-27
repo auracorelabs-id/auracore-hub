@@ -37,7 +37,7 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
                   : 'text-slate-600 hover:text-slate-900'
               }"
             >
-              Request Access
+              Konsultasi Proyek & Jasa
             </button>
             
             <button 
@@ -66,13 +66,16 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
           </div>
         </div>
 
-        <!-- TAB CONTENT 1: Request Prototype Form -->
+        <!-- TAB CONTENT 1: Project Consultation & Service Inquiry Form -->
         <div id="tab-content-request" class="${activeTab === 'request' ? 'block' : 'hidden'} space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/70">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-gradient-to-r from-slate-50 via-blue-50/40 to-slate-50 border border-slate-200/80">
             <div>
-              <h4 class="text-base font-bold text-content-main">Permohonan Uji Coba Prototipe & Kolaborasi</h4>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100/70 text-blue-800 text-[10px] font-bold uppercase tracking-wider mb-1.5">
+                <span>Free Initial Architecture Review</span>
+              </div>
+              <h4 class="text-base font-bold text-content-main">Konsultasi Kebutuhan Software & Permintaan Penawaran</h4>
               <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                Pengajuan akan langsung diteruskan ke Tim Pengembang AuraCore Labs melalui WhatsApp Resmi dan Email.
+                Ceritakan kebutuhan sistem digital atau tantangan teknis institusi Anda. Tim arsitek perangkat lunak kami akan menelaah dan memberikan estimasi transparan tanpa biaya komitmen awal.
               </p>
             </div>
             <div class="flex items-center gap-2 flex-shrink-0">
@@ -80,7 +83,7 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
                 href="https://wa.me/6282256657700" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition-colors"
+                class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition-colors shadow-sm"
               >
                 <span>💬 WhatsApp: +62 822-5665-7700</span>
               </a>
@@ -90,7 +93,7 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
           <form id="prototype-request-form" class="space-y-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label for="req-name" class="block text-xs font-bold text-slate-600 mb-1.5">Nama Lengkap / Organisasi *</label>
+                <label for="req-name" class="block text-xs font-bold text-slate-600 mb-1.5">Nama Lengkap / Instansi / Perusahaan *</label>
                 <input 
                   type="text" 
                   id="req-name" 
@@ -106,7 +109,7 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
                   type="email" 
                   id="req-email" 
                   required 
-                  placeholder="kontak@mitrahusada.id" 
+                  placeholder="budi@mitrahusada.id" 
                   class="pill-input"
                 />
               </div>
@@ -114,23 +117,24 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label for="req-product" class="block text-xs font-bold text-slate-600 mb-1.5">Pilih Prototipe / Fokus</label>
+                <label for="req-product" class="block text-xs font-bold text-slate-600 mb-1.5">Fokus Solusi / Layanan yang Dibutuhkan</label>
                 <select id="req-product" class="pill-input bg-slate-50 cursor-pointer">
-                  <option value="AuraCore Health (Sistem RS & EMR)">AuraCore Health (Sistem RS & EMR)</option>
-                  <option value="AuraCore Sentinel (Android Scanner)">AuraCore Sentinel (Android Scanner)</option>
-                  <option value="SimpanPassword (Enterprise Vault)">SimpanPassword (Enterprise Vault)</option>
-                  <option value="BLineNote (AI Voice & E2EE Notes)">BLineNote (AI Voice & E2EE Notes)</option>
-                  <option value="AI Health Analytics (Eksperimen ML)">AI Health Analytics (Eksperimen ML)</option>
-                  <option value="Kemitraan Inovasi Lainnya">Kemitraan Inovasi Lainnya</option>
+                  <option value="Sistem Informasi RS & Rekam Medis (EMR SatuSehat)">Sistem Informasi RS & Rekam Medis (EMR SatuSehat)</option>
+                  <option value="Integrasi Generative AI & Transkripsi Suara (Speech-to-Text)">Integrasi Generative AI & Transkripsi Suara (Speech-to-Text)</option>
+                  <option value="Keamanan Siber, Zero-Knowledge Vault & Audit Kode">Keamanan Siber, Zero-Knowledge Vault & Audit Kode</option>
+                  <option value="Software Desktop Windows x64 & Otomasi ADB/Hardware">Software Desktop Windows x64 & Otomasi ADB/Hardware</option>
+                  <option value="Aplikasi Web / Mobile Enterprise Kustom">Aplikasi Web / Mobile Enterprise Kustom</option>
+                  <option value="Uji Coba Prototipe Internal AuraCore">Uji Coba Prototipe Internal AuraCore</option>
+                  <option value="Konsultasi Kemitraan & Solusi Lainnya">Konsultasi Kemitraan & Solusi Lainnya</option>
                 </select>
               </div>
 
               <div>
-                <label for="req-notes" class="block text-xs font-bold text-slate-600 mb-1.5">Kebutuhan / Rencana Uji Coba</label>
+                <label for="req-notes" class="block text-xs font-bold text-slate-600 mb-1.5">Uraian Kebutuhan Proyek / Target Waktu</label>
                 <input 
                   type="text" 
                   id="req-notes" 
-                  placeholder="cth. Pilot modul antrean klinik & integrasi rekam medis" 
+                  placeholder="cth. Modul antrean klinik, estimasi rilis Q3 2026" 
                   class="pill-input"
                 />
               </div>
@@ -138,13 +142,13 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
 
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-3">
               <span class="text-xs text-slate-400">
-                Pesan akan terformat rapi dan langsung diteruskan ke WhatsApp resmi kami.
+                Pesan akan terformat rapi dan langsung diteruskan ke WhatsApp resmi tim engineer kami.
               </span>
               <button 
                 type="submit" 
                 class="pill-btn-primary px-8 py-3 text-sm font-bold w-full sm:w-auto flex items-center justify-center gap-2"
               >
-                <span>Kirim via WhatsApp Resmi</span>
+                <span>Kirim Konsultasi via WhatsApp</span>
                 <span>🚀</span>
               </button>
             </div>

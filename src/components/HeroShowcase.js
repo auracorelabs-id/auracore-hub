@@ -15,27 +15,36 @@ export function renderHeroShowcase(productsList) {
       <div class="text-center space-y-5 pt-4 sm:pt-8">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50/90 text-brand-blue text-xs font-bold shadow-soft-sm hover:scale-105 transition-transform cursor-default">
           <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
-          <span>AURACORE LABS INNOVATION HUB</span>
+          <span>AURACORE LABS · SOFTWARE & AI ENGINEERING STUDIO</span>
         </div>
 
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-content-main tracking-tight leading-[1.15]">
-          Empowering Intelligence, <br/>
-          <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 bg-clip-text text-transparent">
-            Crafting Smart Prototypes.
+          Empowering Business with AI, <br/>
+          <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-600 bg-clip-text text-transparent">
+            Crafting Secure Digital Systems.
           </span>
         </h1>
 
         <p class="text-content-body text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
-          Wadah inovasi teknologi digital untuk pengembangan prototipe cerdas, solusi keamanan siber, dan manajemen kesehatan. Sinergi presisi kecerdasan buatan dan kreativitas manusia.
+          Kami merancang & membangun sistem enterprise terintegrasi, solusi kecerdasan buatan (AI), serta perangkat lunak berperforma tinggi dengan standar keamanan siber ketat untuk mentransformasi operasional bisnis Anda.
         </p>
 
-        <!-- Quick Jump Buttons -->
+        <!-- Quick Jump Buttons with Clear Business CTA -->
         <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-          <a href="#prototype-catalog" class="pill-btn-primary px-7 py-3 text-sm">
-            Jelajahi Prototipe ↓
+          <a href="#services-section" class="pill-btn-primary px-7 py-3 text-sm flex items-center gap-2 shadow-soft-md">
+            <span>Lihat Layanan & Solusi</span>
+            <span>↓</span>
           </a>
-          <a href="#console-section" class="pill-btn-secondary px-7 py-3 text-sm">
-            Ajukan Akses & Kolaborasi
+          <a href="#prototype-catalog" class="pill-btn-secondary px-7 py-3 text-sm">
+            Eksplorasi Bukti Karya (5 Produk)
+          </a>
+          <a 
+            href="https://wa.me/6282256657700" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-1.5 px-4 py-3 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 text-xs font-bold transition-all"
+          >
+            <span>💬 Konsultasi Cepat (+62 822-5665-7700)</span>
           </a>
         </div>
       </div>
@@ -56,19 +65,19 @@ export function renderHeroShowcase(productsList) {
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-slate-200/80">
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold mb-2">
-              <span>PROTOTYPE SHOWCASE</span>
+              <span>PORTFOLIO & PROOF OF CAPABILITY</span>
             </div>
             <h2 class="text-2xl sm:text-3xl font-black text-content-main tracking-tight">
-              Katalog Prototipe & Solusi Digital
+              Solusi Digital & Portofolio Rekayasa Aktif
             </h2>
             <p class="text-xs sm:text-sm text-slate-500 mt-1 max-w-xl">
-              Ikhtisar ringkas portofolio inovasi aktif AuraCore Labs. Klik <strong>Lihat Detail Lengkap</strong> atau pilih melalui menu <strong>Ecosystem & Products</strong> di navigasi atas untuk membaca analisis arsitektur mendalam.
+              Bukti nyata kapabilitas teknis kami. Setiap aplikasi di bawah ini adalah produk fungsional hidup yang mendemonstrasikan keahlian kami dalam kecerdasan buatan, sistem kesehatan, kriptografi, dan utilitas desktop native.
             </p>
           </div>
 
           <div class="text-xs text-slate-400 font-semibold flex items-center gap-2 flex-shrink-0">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>5 Prototipe Tersedia</span>
+            <span>5 Solusi Fungsional Aktif</span>
           </div>
         </div>
 

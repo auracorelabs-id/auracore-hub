@@ -190,11 +190,20 @@ export function renderNavbar(navigationData) {
 
           <!-- Secondary Menu Links -->
           <a 
+            href="#services-section" 
+            id="nav-services-direct"
+            class="text-sm font-semibold text-content-body hover:text-brand-blue py-2 transition-colors flex items-center gap-1.5"
+          >
+            <span>Layanan & Solusi</span>
+            <span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-50 text-emerald-700 font-bold">New</span>
+          </a>
+
+          <a 
             href="#prototype-catalog" 
             id="nav-catalog-direct"
             class="text-sm font-semibold text-content-body hover:text-brand-blue py-2 transition-colors"
           >
-            Katalog Prototipe
+            Portofolio Solusi
           </a>
 
           <a 
@@ -225,7 +234,7 @@ export function renderNavbar(navigationData) {
             href="#console-section" 
             class="pill-btn-secondary text-xs py-2 px-4 sm:px-5 hover:border-brand-blue hover:text-brand-blue font-bold shadow-none"
           >
-            Request Access
+            Konsultasi Proyek
           </a>
 
           <!-- Mobile Menu Button -->

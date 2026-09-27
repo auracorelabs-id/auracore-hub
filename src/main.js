@@ -20,6 +20,7 @@ import { validateProductsList } from './schemas/productSchema.js';
 
 import { renderNavbar } from './components/Navbar.js';
 import { renderHeroShowcase } from './components/HeroShowcase.js';
+import { renderServicesSection } from './components/ServicesSection.js';
 import { renderProductDetail } from './components/ProductDetail.js';
 import { getDetailTabMarkup } from './components/BLineNoteDetail.js';
 import { renderActionConsole } from './components/ActionConsole.js';
@@ -56,6 +57,9 @@ function renderContent() {
     mainContent.innerHTML = `
       <section id="showcase-container">
         ${renderHeroShowcase(products)}
+      </section>
+      <section id="services-container">
+        ${renderServicesSection()}
       </section>
       <section id="console-container">
         ${renderActionConsole(products, labRoadmap, state.activeConsoleTab)}
@@ -103,7 +107,7 @@ function bindHomeEvents() {
     });
   });
 
-  // Switch to request from quick-access
+  // Switch to request / consultation from quick-access or services
   document.querySelectorAll('[data-action="switch-to-request"]').forEach(btn => {
     btn.addEventListener('click', () => {
       const preselect = btn.getAttribute('data-preselect');
@@ -121,32 +125,58 @@ function bindHomeEvents() {
     });
   });
 
-  // Request prototype form (Connected to official WhatsApp +6282256657700)
+  // Switch to consultation directly from Services cards
+  document.querySelectorAll('[data-action="switch-to-consultation"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const serviceId = btn.getAttribute('data-service');
+      store.setState({ activeConsoleTab: 'request' });
+      const container = document.getElementById('console-container');
+      if (container) {
+        container.innerHTML = renderActionConsole(products, labRoadmap, 'request');
+        bindHomeEvents();
+      }
+      const selectElem = document.getElementById('req-product');
+      if (selectElem && serviceId) {
+        if (serviceId === 'enterprise-healthcare') {
+          selectElem.value = 'Sistem Informasi RS & Rekam Medis (EMR SatuSehat)';
+        } else if (serviceId === 'generative-ai') {
+          selectElem.value = 'Integrasi Generative AI & Transkripsi Suara (Speech-to-Text)';
+        } else if (serviceId === 'cybersecurity') {
+          selectElem.value = 'Keamanan Siber, Zero-Knowledge Vault & Audit Kode';
+        } else if (serviceId === 'desktop-native') {
+          selectElem.value = 'Software Desktop Windows x64 & Otomasi ADB/Hardware';
+        }
+      }
+      document.getElementById('console-section')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Request & Consultation form (Connected to official WhatsApp +6282256657700)
   const form = document.getElementById('prototype-request-form');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('req-name')?.value?.trim() || 'Mitra';
+      const name = document.getElementById('req-name')?.value?.trim() || 'Klien / Mitra';
       const email = document.getElementById('req-email')?.value?.trim() || '-';
-      const product = document.getElementById('req-product')?.value || 'Prototipe AuraCore';
-      const notes = document.getElementById('req-notes')?.value?.trim() || 'Permohonan akses evaluasi & uji coba prototipe.';
+      const product = document.getElementById('req-product')?.value || 'Konsultasi Software Kustom';
+      const notes = document.getElementById('req-notes')?.value?.trim() || 'Konsultasi kebutuhan sistem & estimasi solusi.';
 
       const waText = 
-`Halo Tim Pengembang AuraCore Labs,
+`Halo Tim Engineer AuraCore Labs,
 
-Saya mengajukan permohonan akses uji coba prototipe & kolaborasi:
-• Nama / Organisasi: ${name}
+Saya ingin konsultasi kebutuhan pengembangan perangkat lunak & sistem digital:
+• Nama / Instansi: ${name}
 • Email Kontak Resmi: ${email}
-• Fokus Prototipe: ${product}
-• Kebutuhan / Rencana Uji Coba: ${notes}
+• Fokus Kebutuhan: ${product}
+• Rencana / Uraian Masalah: ${notes}
 
-Mohon petunjuk akses dan prosedur pengujian berikutnya. Terima kasih!`;
+Mohon informasi jadwal diskusi dan ketersediaan tim. Terima kasih!`;
 
       const waUrl = `https://wa.me/6282256657700?text=${encodeURIComponent(waText)}`;
       
       showToast(
-        'Permohonan Diproses! 🚀', 
-        `Terima kasih, ${name}. Pesan telah diformat dan diteruskan ke WhatsApp Resmi (+62 822-5665-7700).`, 
+        'Permintaan Konsultasi Diteruskan! 🚀', 
+        `Terima kasih, ${name}. Rincian kebutuhan telah diformat dan diteruskan ke WhatsApp Resmi tim engineer (+62 822-5665-7700).`, 
         'success'
       );
 

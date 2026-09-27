@@ -23,8 +23,8 @@ export function renderFooter(navigationData) {
               height="28"
             />
             <div>
-              <span class="text-sm font-extrabold text-content-main">AuraCore Labs</span>
-              <p class="text-xs text-slate-500">Digital Innovation Hub · Empowering Intelligence with AI</p>
+              <span class="text-sm font-extrabold text-content-main">AuraCore Labs Indonesia</span>
+              <p class="text-xs text-slate-500">Software & AI Engineering Studio · Solusi Digital Enterprise & Healthcare</p>
             </div>
           </div>
 
@@ -53,14 +53,14 @@ export function renderFooter(navigationData) {
         </div>
 
         <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© 2026 AuraCore Labs. All rights reserved. Built with Vite & Tailwind CSS.</p>
+          <p>© 2026 AuraCore Labs Indonesia. All rights reserved. Melayani proyek pengembangan digital seluruh Indonesia.</p>
           <div class="flex items-center gap-4">
             <span class="inline-flex items-center gap-1 text-slate-500">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              All Systems Operational
+              Engineering SLA Active
             </span>
             <span>·</span>
-            <span>Build in Public</span>
+            <span>Enterprise Security Tested</span>
           </div>
         </div>
 
