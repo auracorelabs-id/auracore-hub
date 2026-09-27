@@ -15,10 +15,10 @@ export function renderServicesSection() {
       badgeColor: 'bg-indigo-50 text-indigo-700 border-indigo-200',
       description: 'Pengembangan sistem informasi manajemen terintegrasi untuk rumah sakit, klinik, dan bisnis. Meminimalkan waktu administrasi dengan alur kerja cepat dan minim klik.',
       capabilities: [
-        'Rekam Medis Elektronik (RME) terstandar SatuSehat Kemenkes',
+        'Arsitektur Rekam Medis (RME) siap integrasi SatuSehat Kemenkes (FHIR API Ready)',
         'Sistem Antrean Farmasi, Laboratorium, & Billing Terpadu',
-        'Integrasi API / Bridging BPJS Kesehatan & Klaim Asuransi',
-        'Dashboard Analitik Eksekutif & Manajemen Inventaris Obat'
+        'Dukungan integrasi API Bridging BPJS Kesehatan & Manajemen Klaim',
+        'Dashboard Analitik Operasional & Manajemen Inventaris Obat'
       ],
       proof: 'Dibangun di atas fondasi arsitektur AuraCore Health.',
       accent: 'border-indigo-100 hover:border-indigo-300'
