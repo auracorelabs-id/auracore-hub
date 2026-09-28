@@ -233,17 +233,27 @@ export const products = [
     },
     actions: {
       primary: {
-        label: 'Request Akses / Demo',
-        url: '#console-section',
-        isExternal: false,
-        type: 'modal'
+        label: 'Download v3.2.0 (.exe)',
+        url: 'https://github.com/protontekno-bit/ITSUPPORT_CENTER/releases/download/v3.2.0/ITSupportCenter.exe',
+        isExternal: true,
+        type: 'download'
       },
       secondary: {
-        label: 'Detail Spesifikasi',
-        url: '#product-itsupport',
-        isExternal: false
+        label: 'GitHub Repository',
+        url: 'https://github.com/protontekno-bit/ITSUPPORT_CENTER',
+        isExternal: true
+      },
+      portable: {
+        label: 'Download Portable (.zip)',
+        url: 'https://github.com/protontekno-bit/ITSUPPORT_CENTER/releases/download/v3.2.0/ITSupportCenter-v3.2.0-Portable.zip',
+        isExternal: true
       }
     },
+    repoUrl: 'https://github.com/protontekno-bit/ITSUPPORT_CENTER',
+    downloadUrl: 'https://github.com/protontekno-bit/ITSUPPORT_CENTER/releases/download/v3.2.0/ITSupportCenter.exe',
+    downloadPortableUrl: 'https://github.com/protontekno-bit/ITSUPPORT_CENTER/releases/download/v3.2.0/ITSupportCenter-v3.2.0-Portable.zip',
+    releasesUrl: 'https://github.com/protontekno-bit/ITSUPPORT_CENTER/releases',
+    screenshot: '/screenshots/itsupport-center.png',
     icon: 'wrench-screwdriver',
     themeColor: '#0f766e', // Teal
     accentBg: 'bg-teal-50',

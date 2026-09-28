@@ -77,11 +77,11 @@ export function renderHeroShowcase(productsList) {
 
           <div class="text-xs text-slate-400 font-semibold flex items-center gap-2 flex-shrink-0">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>5 Solusi Fungsional Aktif</span>
+            <span>${productsList.length} Solusi Fungsional Aktif</span>
           </div>
         </div>
 
-        <!-- 5 Concise Curated Product Cards -->
+        <!-- Curated Product Cards -->
         <div class="space-y-6">
           ${productsList.map((product, index) => `
             <div 

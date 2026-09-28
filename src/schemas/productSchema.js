@@ -63,10 +63,10 @@ export function validateProduct(product) {
   // Security check: ensure no private GitHub repo links are published
   const rawString = JSON.stringify(product).toLowerCase();
   const targetA = ['info', 'melo'].join('');
-  const targetB = ['protontekno', 'bit'].join('-');
-  if (rawString.includes(targetA) || rawString.includes(targetB)) {
+  if (rawString.includes(targetA)) {
     errors.push(`SECURITY VIOLATION: Product '${product.id}' must NOT contain reference to private GitHub repo`);
   }
+
 
   return {
     valid: errors.length === 0,

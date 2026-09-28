@@ -95,6 +95,17 @@ export function renderProductDetail(product, activeSubTab = 'overview') {
               <span>${product.actions.secondary.label} ↗</span>
             </a>
           ` : ''}
+
+          ${product.actions.portable?.isExternal ? `
+            <a 
+              href="${product.actions.portable.url}" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="pill-btn-secondary px-6 py-3 text-xs flex items-center gap-2"
+            >
+              <span>${product.actions.portable.label} ⬇</span>
+            </a>
+          ` : ''}
         </div>
       </div>
 
@@ -294,46 +305,134 @@ function getProductTelemetry(product) {
 
     case 'itsupport':
       return `
-        <div class="relative bg-gradient-to-br from-slate-900 via-teal-950/80 to-slate-900 rounded-2xl p-6 text-white shadow-2xl border border-teal-800/50 overflow-hidden font-sans">
-          <div class="flex items-center justify-between pb-3 mb-4 border-b border-teal-900/60">
-            <div class="flex items-center gap-2.5">
-              <div class="w-7 h-7 rounded-lg bg-teal-500/20 text-teal-300 flex items-center justify-center text-sm shadow-inner">
-                🛠️
-              </div>
-              <span class="font-bold text-sm text-white">IT Support & Security Center Console</span>
-            </div>
-            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-400/30 font-semibold font-mono">
-              86 Tools · Dual Engine
-            </span>
-          </div>
+        <div class="space-y-6">
           
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
-            <div class="bg-slate-800/80 p-3.5 rounded-xl border border-teal-800/40">
-              <span class="text-[10px] uppercase font-bold text-teal-300 block">Hardware & Diagnostics</span>
-              <span class="text-sm font-bold text-white mt-1 block">SMART SSD & Battery</span>
-              <p class="text-[11px] text-slate-400 mt-1">Audit BitLocker, BIOS OEM serial, dan thermal sensor real-time.</p>
+          <!-- Live Real Application Window Showcase -->
+          <div class="rounded-3xl border border-slate-200/90 bg-slate-900 shadow-soft-xl overflow-hidden">
+            <!-- Window Title Bar -->
+            <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between gap-4">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                <span class="text-xs font-mono text-slate-300 ml-2 hidden sm:inline truncate">
+                  IT Support Center 2026 (v3.2.0 Enterprise) — AuraCore (https://www.auracore.my.id)
+                </span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] text-teal-300 font-bold px-2.5 py-0.5 rounded-full bg-teal-950/80 border border-teal-700/50">
+                  87 Modul IT · Real Windows App
+                </span>
+              </div>
             </div>
-            <div class="bg-slate-800/80 p-3.5 rounded-xl border border-teal-800/40">
-              <span class="text-[10px] uppercase font-bold text-teal-300 block">Printer & Spooler Eng.</span>
-              <span class="text-sm font-bold text-emerald-400 mt-1 block">Fix Error 0x0000011b</span>
-              <p class="text-[11px] text-slate-400 mt-1">Spooler queue purger (.SHD/.SPL) dan reset total printer stack.</p>
-            </div>
-            <div class="bg-slate-800/80 p-3.5 rounded-xl border border-teal-800/40">
-              <span class="text-[10px] uppercase font-bold text-teal-300 block">Security & Air-Gap</span>
-              <span class="text-sm font-bold text-amber-300 mt-1 block">1-Sec Network Air-Gap</span>
-              <p class="text-[11px] text-slate-400 mt-1">Karantina instan serangan ransomware dan firewall factory reset.</p>
+
+            <!-- Authentic Screenshot Image -->
+            <div class="relative bg-slate-950 overflow-hidden group">
+              <img 
+                src="/screenshots/itsupport-center.png" 
+                alt="Tangkapan Layar Asli Antarmuka IT Support Center 2026 v3.2.0 Enterprise" 
+                class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.008]"
+                loading="lazy"
+                width="1536"
+                height="864"
+              />
+              <div class="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-slate-700 text-[11px] text-slate-200 flex items-center gap-2 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="font-medium">Antarmuka Asli Aplikasi (.NET 8 WinForms GUI + Live Console)</span>
+              </div>
             </div>
           </div>
 
-          <div class="p-3.5 rounded-xl bg-slate-800/60 border border-teal-800/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span class="text-slate-300 font-medium">Dual Interface: C# .NET 8 WinForms GUI + Zero-Dependency Windows Batch CLI</span>
+          <!-- Official Release Download & Repository Banner -->
+          <div class="p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-teal-950 via-slate-900 to-slate-900 text-white border border-teal-800/50 shadow-xl space-y-4">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+                  <span class="text-xs font-bold text-teal-300 uppercase tracking-wider">Rilis Publik Resmi v3.2.0 Enterprise</span>
+                </div>
+                <h4 class="text-xl font-black text-white">Unduh IT Support Center & Akses Source Code</h4>
+                <p class="text-xs text-slate-300 max-w-xl leading-relaxed">
+                  Tersedia installer binary x64 siap pakai atau arsip portable zip tanpa instalasi, serta repositori kode terbuka di GitHub.
+                </p>
+              </div>
+
+              <!-- Quick Action Download Buttons -->
+              <div class="flex flex-wrap items-center gap-3">
+                <a 
+                  href="https://github.com/protontekno-bit/ITSUPPORT_CENTER/releases/download/v3.2.0/ITSupportCenter.exe" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="px-5 py-3 rounded-2xl bg-teal-400 hover:bg-teal-300 text-slate-950 font-black text-xs shadow-lg hover:scale-105 transition-all flex items-center gap-2"
+                >
+                  <span>⬇ Unduh .exe (Single-File)</span>
+                  <span class="text-[10px] bg-slate-950/20 px-2 py-0.5 rounded font-mono font-bold">72 MB</span>
+                </a>
+                <a 
+                  href="https://github.com/protontekno-bit/ITSUPPORT_CENTER/releases/download/v3.2.0/ITSupportCenter-v3.2.0-Portable.zip" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="px-4 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition-all flex items-center gap-2"
+                >
+                  <span>📦 Unduh Portable (.zip)</span>
+                  <span class="text-[10px] text-teal-300 font-mono">68 MB</span>
+                </a>
+                <a 
+                  href="https://github.com/protontekno-bit/ITSUPPORT_CENTER" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="px-4 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 hover:border-slate-500 transition-all flex items-center gap-2"
+                >
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>GitHub Repository ↗</span>
+                </a>
+              </div>
             </div>
-            <span class="text-[11px] font-mono text-teal-300 font-bold px-2 py-0.5 rounded bg-teal-900/50">
-              HTML Report Generator Ready
-            </span>
           </div>
+
+          <!-- Feature Capability Telemetry -->
+          <div class="relative bg-gradient-to-br from-slate-900 via-teal-950/80 to-slate-900 rounded-2xl p-6 text-white shadow-2xl border border-teal-800/50 overflow-hidden font-sans">
+            <div class="flex items-center justify-between pb-3 mb-4 border-b border-teal-900/60">
+              <div class="flex items-center gap-2.5">
+                <div class="w-7 h-7 rounded-lg bg-teal-500/20 text-teal-300 flex items-center justify-center text-sm shadow-inner">
+                  🛠️
+                </div>
+                <span class="font-bold text-sm text-white">IT Support & Security Center Engine</span>
+              </div>
+              <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-400/30 font-semibold font-mono">
+                86+ Modul · Dual Engine
+              </span>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+              <div class="bg-slate-800/80 p-3.5 rounded-xl border border-teal-800/40">
+                <span class="text-[10px] uppercase font-bold text-teal-300 block">Hardware & Diagnostics</span>
+                <span class="text-sm font-bold text-white mt-1 block">SMART SSD & Battery</span>
+                <p class="text-[11px] text-slate-400 mt-1">Audit BitLocker, BIOS OEM serial, dan thermal sensor real-time.</p>
+              </div>
+              <div class="bg-slate-800/80 p-3.5 rounded-xl border border-teal-800/40">
+                <span class="text-[10px] uppercase font-bold text-teal-300 block">Printer & Spooler Eng.</span>
+                <span class="text-sm font-bold text-emerald-400 mt-1 block">Fix Error 0x0000011b</span>
+                <p class="text-[11px] text-slate-400 mt-1">Spooler queue purger (.SHD/.SPL) dan reset total printer stack.</p>
+              </div>
+              <div class="bg-slate-800/80 p-3.5 rounded-xl border border-teal-800/40">
+                <span class="text-[10px] uppercase font-bold text-teal-300 block">Security & Air-Gap</span>
+                <span class="text-sm font-bold text-amber-300 mt-1 block">1-Sec Network Air-Gap</span>
+                <p class="text-[11px] text-slate-400 mt-1">Karantina instan serangan ransomware dan firewall factory reset.</p>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-800/60 border border-teal-800/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-slate-300 font-medium">Dual Interface: C# .NET 8 WinForms GUI + Zero-Dependency Windows Batch CLI</span>
+              </div>
+              <span class="text-[11px] font-mono text-teal-300 font-bold px-2 py-0.5 rounded bg-teal-900/50">
+                HTML Report Generator Ready
+              </span>
+            </div>
+          </div>
+
         </div>
       `;
 
