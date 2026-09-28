@@ -39,11 +39,15 @@ function scanDirectory(dir) {
     } else if (file.endsWith('.js') || file.endsWith('.html')) {
       const content = fs.readFileSync(fullPath, 'utf-8');
 
-      // Check for forbidden private repo links for blinenote
-      const targetPattern = ['github', '.com/', 'Info', 'Melo'].join('');
-      if (content.includes(targetPattern)) {
-        console.error(`❌ SECURITY LEAK in ${fullPath}: Detected forbidden GitHub repo link.`);
-        failed = true;
+      // Check for forbidden private repo links (blinenote & itsupport)
+      const targetBLine = ['Info', 'Melo'].join('');
+      const targetITSupport = ['protontekno', 'bit'].join('-');
+      if (content.includes(targetBLine) || content.includes(targetITSupport)) {
+        // Skip scanning the validator script itself
+        if (!file.includes('validate-standards.js')) {
+          console.error(`❌ SECURITY LEAK in ${fullPath}: Detected forbidden private GitHub repo link.`);
+          failed = true;
+        }
       }
 
       // Check for hardcoded internal salt formulas

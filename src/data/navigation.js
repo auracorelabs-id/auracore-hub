@@ -48,6 +48,14 @@ export const navigation = {
           url: '#health',
           iconColor: '#4f46e5',
           badge: 'Prototype'
+        },
+        {
+          name: 'IT Support & Security Center',
+          tag: 'Field Engineer Toolkit',
+          desc: '86 modul perbaikan sistem, spooler printer, & karantina ransomware',
+          url: '#itsupport',
+          iconColor: '#0f766e',
+          badge: 'v3.2.0'
         }
       ]
     },

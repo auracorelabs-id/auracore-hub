@@ -292,6 +292,51 @@ function getProductTelemetry(product) {
         </div>
       `;
 
+    case 'itsupport':
+      return `
+        <div class="relative bg-gradient-to-br from-slate-900 via-teal-950/80 to-slate-900 rounded-2xl p-6 text-white shadow-2xl border border-teal-800/50 overflow-hidden font-sans">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-teal-900/60">
+            <div class="flex items-center gap-2.5">
+              <div class="w-7 h-7 rounded-lg bg-teal-500/20 text-teal-300 flex items-center justify-center text-sm shadow-inner">
+                🛠️
+              </div>
+              <span class="font-bold text-sm text-white">IT Support & Security Center Console</span>
+            </div>
+            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-400/30 font-semibold font-mono">
+              86 Tools · Dual Engine
+            </span>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+            <div class="bg-slate-800/80 p-3.5 rounded-xl border border-teal-800/40">
+              <span class="text-[10px] uppercase font-bold text-teal-300 block">Hardware & Diagnostics</span>
+              <span class="text-sm font-bold text-white mt-1 block">SMART SSD & Battery</span>
+              <p class="text-[11px] text-slate-400 mt-1">Audit BitLocker, BIOS OEM serial, dan thermal sensor real-time.</p>
+            </div>
+            <div class="bg-slate-800/80 p-3.5 rounded-xl border border-teal-800/40">
+              <span class="text-[10px] uppercase font-bold text-teal-300 block">Printer & Spooler Eng.</span>
+              <span class="text-sm font-bold text-emerald-400 mt-1 block">Fix Error 0x0000011b</span>
+              <p class="text-[11px] text-slate-400 mt-1">Spooler queue purger (.SHD/.SPL) dan reset total printer stack.</p>
+            </div>
+            <div class="bg-slate-800/80 p-3.5 rounded-xl border border-teal-800/40">
+              <span class="text-[10px] uppercase font-bold text-teal-300 block">Security & Air-Gap</span>
+              <span class="text-sm font-bold text-amber-300 mt-1 block">1-Sec Network Air-Gap</span>
+              <p class="text-[11px] text-slate-400 mt-1">Karantina instan serangan ransomware dan firewall factory reset.</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-800/60 border border-teal-800/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-slate-300 font-medium">Dual Interface: C# .NET 8 WinForms GUI + Zero-Dependency Windows Batch CLI</span>
+            </div>
+            <span class="text-[11px] font-mono text-teal-300 font-bold px-2 py-0.5 rounded bg-teal-900/50">
+              HTML Report Generator Ready
+            </span>
+          </div>
+        </div>
+      `;
+
     default: // ai-analytics
       return `
         <div class="relative bg-gradient-to-br from-slate-900 via-purple-950/80 to-slate-900 rounded-2xl p-6 text-white shadow-2xl border border-purple-800/50 overflow-hidden">

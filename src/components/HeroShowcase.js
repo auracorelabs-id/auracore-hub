@@ -36,7 +36,7 @@ export function renderHeroShowcase(productsList) {
             <span>↓</span>
           </a>
           <a href="#prototype-catalog" class="pill-btn-secondary px-7 py-3 text-sm">
-            Eksplorasi Bukti Karya (5 Produk)
+            Eksplorasi Bukti Karya (6 Solusi)
           </a>
           <a 
             href="https://wa.me/6282256657700" 
@@ -204,6 +204,7 @@ function getProductEmoji(id) {
     case 'blinenote': return '🎙️';
     case 'health': return '🏥';
     case 'ai-analytics': return '✨';
+    case 'itsupport': return '🛠️';
     default: return '📦';
   }
 }

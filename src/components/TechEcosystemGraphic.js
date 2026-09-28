@@ -53,6 +53,11 @@ export function renderTechEcosystemGraphic(activeProductId = 'sentinel') {
             <stop offset="100%" stop-color="#3b82f6" />
           </linearGradient>
 
+          <linearGradient id="streamTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0f766e" />
+            <stop offset="100%" stop-color="#3b82f6" />
+          </linearGradient>
+
           <!-- Node Glow Filters -->
           <filter id="glowLight" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="8" result="blur" />
@@ -141,6 +146,10 @@ export function renderTechEcosystemGraphic(activeProductId = 'sentinel') {
         <!-- Stream 5: Top-Center (BLineNote AI Voice) -->
         <path d="M 400 220 L 400 78" fill="none" stroke="#e2e8f0" stroke-width="2" />
         <path d="M 400 220 L 400 78" fill="none" stroke="url(#streamAmber)" stroke-width="2.5" class="stream-path" />
+
+        <!-- Stream 6: Bottom-Center (IT Support & Security Center) -->
+        <path d="M 400 220 L 400 345" fill="none" stroke="#e2e8f0" stroke-width="2" />
+        <path d="M 400 220 L 400 345" fill="none" stroke="url(#streamTeal)" stroke-width="2.5" class="stream-path" />
 
         <!-- ================= CENTRAL CORE HUB ================= -->
         <g id="central-core" class="interactive-node" data-node-id="core">
@@ -309,6 +318,34 @@ export function renderTechEcosystemGraphic(activeProductId = 'sentinel') {
           <g transform="translate(355, 12)">
             <rect width="90" height="18" rx="9" fill="#d97706" />
             <text x="45" y="12.5" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#ffffff">AI Voice · 2FA</text>
+          </g>
+        </g>
+
+        <!-- ================= NODE 6: IT SUPPORT CENTER (Bottom-Center) ================= -->
+        <g id="node-itsupport" class="interactive-node eco-node-c" data-product-id="itsupport" transform="translate(0, 0)">
+          <!-- Ground Shadow -->
+          <ellipse cx="400" cy="405" rx="42" ry="14" fill="#0f172a" opacity="0.07" />
+          
+          <!-- Active Highlight Aura -->
+          ${activeProductId === 'itsupport' ? `
+            <circle cx="400" cy="365" r="44" fill="#0f766e" opacity="0.22" filter="url(#glowLight)" />
+            <circle cx="400" cy="365" r="36" fill="none" stroke="#0f766e" stroke-width="2" stroke-dasharray="3 3" />
+          ` : ''}
+
+          <!-- Floating Glass Node Card -->
+          <rect x="355" y="335" width="90" height="65" rx="18" fill="#ffffff" stroke="${activeProductId === 'itsupport' ? '#0f766e' : '#e2e8f0'}" stroke-width="${activeProductId === 'itsupport' ? '2.5' : '1.5'}" filter="url(#softShadow)" />
+          
+          <!-- Emblem Icon Container -->
+          <rect x="380" y="342" width="40" height="30" rx="10" fill="#f0fdfa" />
+          <text x="400" y="362" text-anchor="middle" font-size="16">🛠️</text>
+
+          <!-- Label Tag -->
+          <text x="400" y="388" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" fill="#115e59">IT Support</text>
+
+          <!-- Status Indicator Pill -->
+          <g transform="translate(355, 316)">
+            <rect width="90" height="18" rx="9" fill="#0f766e" />
+            <text x="45" y="12.5" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#ffffff">86 Field Tools</text>
           </g>
         </g>
 

@@ -120,6 +120,7 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
                 <label for="req-product" class="block text-xs font-bold text-slate-600 mb-1.5">Fokus Solusi / Layanan yang Dibutuhkan</label>
                 <select id="req-product" class="pill-input bg-slate-50 cursor-pointer">
                   <option value="Sistem Informasi RS & Rekam Medis (EMR SatuSehat)">Sistem Informasi RS & Rekam Medis (EMR SatuSehat)</option>
+                  <option value="IT Support & Security Center (Suite Perbaikan Sistem)">IT Support & Security Center (Suite Perbaikan Sistem)</option>
                   <option value="Integrasi Generative AI & Transkripsi Suara (Speech-to-Text)">Integrasi Generative AI & Transkripsi Suara (Speech-to-Text)</option>
                   <option value="Keamanan Siber, Zero-Knowledge Vault & Audit Kode">Keamanan Siber, Zero-Knowledge Vault & Audit Kode</option>
                   <option value="Software Desktop Windows x64 & Otomasi ADB/Hardware">Software Desktop Windows x64 & Otomasi ADB/Hardware</option>

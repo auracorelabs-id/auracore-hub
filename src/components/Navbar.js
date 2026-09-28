@@ -57,7 +57,7 @@ export function renderNavbar(navigationData) {
                   <span>Pilih Aplikasi untuk Melihat Detail & Arsitektur</span>
                   <span class="text-emerald-600 font-semibold flex items-center gap-1.5 lowercase">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    5 solusi digital aktif
+                    6 solusi digital aktif
                   </span>
                 </div>
 
@@ -153,7 +153,7 @@ export function renderNavbar(navigationData) {
                     href="#product-ai-analytics" 
                     data-action="open-product-detail"
                     data-product-id="ai-analytics"
-                    class="nav-product-link flex items-start gap-3.5 p-3 rounded-2xl hover:bg-purple-50/60 transition-all duration-200 group/item border border-transparent hover:border-purple-100 col-span-2"
+                    class="nav-product-link flex items-start gap-3.5 p-3 rounded-2xl hover:bg-purple-50/60 transition-all duration-200 group/item border border-transparent hover:border-purple-100"
                   >
                     <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover/item:scale-105 transition-transform">
                       ✨
@@ -165,6 +165,27 @@ export function renderNavbar(navigationData) {
                       </div>
                       <p class="text-xs text-slate-500 mt-1 leading-relaxed">
                         Eksperimen model machine learning untuk inferensi prediktif data klinis.
+                      </p>
+                    </div>
+                  </a>
+
+                  <!-- Product 6: IT Support & Security Center -->
+                  <a 
+                    href="#product-itsupport" 
+                    data-action="open-product-detail"
+                    data-product-id="itsupport"
+                    class="nav-product-link flex items-start gap-3.5 p-3 rounded-2xl hover:bg-teal-50/60 transition-all duration-200 group/item border border-transparent hover:border-teal-100"
+                  >
+                    <div class="w-9 h-9 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover/item:scale-105 transition-transform">
+                      🛠️
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm font-bold text-content-main group-hover/item:text-teal-700 transition-colors">IT Support Center</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-100/80 text-teal-800">v3.2.0</span>
+                      </div>
+                      <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                        86 modul perbaikan sistem, spooler printer, & air-gap karantina ransomware.
                       </p>
                     </div>
                   </a>
@@ -270,6 +291,9 @@ export function renderNavbar(navigationData) {
           </a>
           <a href="#product-ai-analytics" data-action="open-product-detail" data-product-id="ai-analytics" class="block px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
             ✨ AI Health Analytics <span class="text-xs text-purple-600 font-semibold">(R&D)</span>
+          </a>
+          <a href="#product-itsupport" data-action="open-product-detail" data-product-id="itsupport" class="block px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
+            🛠️ IT Support Center <span class="text-xs text-teal-600 font-semibold">(v3.2.0)</span>
           </a>
         </div>
         <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">

@@ -207,5 +207,47 @@ export const products = [
     accentBg: 'bg-amber-50',
     accentBorder: 'border-amber-200',
     accentText: 'text-amber-700'
+  },
+  {
+    id: 'itsupport',
+    name: 'IT Support & Security Center',
+    subtitle: 'Enterprise System Repair & Field Toolkit',
+    category: 'Enterprise Desktop Utility',
+    status: 'Public Release',
+    statusVariant: 'success',
+    badge: 'v3.2.0 · .NET 8 & CLI',
+    tagline: 'All-in-One Field Toolkit & Enterprise System Repair Suite — 86 modul perbaikan sistem mandiri.',
+    description: 'Suite perkakas teknisi IT enterprise dan sistem diagnosa komprehensif dengan antarmuka ganda (C# .NET 8 WinForms GUI & Zero-Dependency CLI). Menyediakan 86 utilitas otomasi hardware audit, spooler printer, air-gap karantina jaringan ransomware, perbaikan Active Directory/RDP, perbaikan WMI, dan generator laporan servis HTML.',
+    highlights: [
+      '86 Modul Perbaikan & Diagnosa Mandiri (Dual GUI .NET 8 & CLI Batch)',
+      'Karantina Jaringan Darurat 1-Detik (Ransomware Air-Gap) & Audit Lisensi',
+      'Pembersih Antrean Printer, Reset Spooler, & Otomasi WMI/DISM Repair',
+      'Generator Berita Acara & Laporan Servis Teknis Format HTML Otomatis'
+    ],
+    techStack: ['C# .NET 8', 'WinForms', 'Windows Batch', 'PowerShell', 'WMI/CIM', 'Nmap Engine'],
+    metrics: {
+      tools: '86 Integrated Modules',
+      architecture: 'Dual GUI & CLI Engine',
+      packaging: 'Single-File Portable',
+      compatibility: 'Windows 10/11 x64'
+    },
+    actions: {
+      primary: {
+        label: 'Request Akses / Demo',
+        url: '#console-section',
+        isExternal: false,
+        type: 'modal'
+      },
+      secondary: {
+        label: 'Detail Spesifikasi',
+        url: '#product-itsupport',
+        isExternal: false
+      }
+    },
+    icon: 'wrench-screwdriver',
+    themeColor: '#0f766e', // Teal
+    accentBg: 'bg-teal-50',
+    accentBorder: 'border-teal-200',
+    accentText: 'text-teal-700'
   }
 ];
