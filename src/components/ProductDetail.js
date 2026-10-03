@@ -10,6 +10,7 @@
  */
 
 import { renderBLineNoteDetail, getDetailTabMarkup } from './BLineNoteDetail.js';
+import { IconCheck, IconLock, IconActivity, IconWrench, IconBrainCircuit } from './icons.js';
 
 export function renderProductDetail(product, activeSubTab = 'overview') {
   if (!product) return `<div class="p-8 text-center text-slate-500">Produk tidak ditemukan.</div>`;
@@ -138,7 +139,9 @@ export function renderProductDetail(product, activeSubTab = 'overview') {
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
             ${product.highlights.map(h => `
               <div class="p-4 rounded-2xl bg-slate-50/80 text-xs text-content-body flex items-start gap-3 border border-slate-100">
-                <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</span>
+                <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  ${IconCheck('w-3 h-3 text-emerald-600')}
+                </span>
                 <span class="font-medium leading-relaxed">${h}</span>
               </div>
             `).join('')}
@@ -246,7 +249,7 @@ function getProductTelemetry(product) {
           <div class="flex items-center justify-between pb-3 mb-4 border-b border-sky-900/60">
             <div class="flex items-center gap-2.5">
               <div class="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-300 flex items-center justify-center text-sm shadow-inner">
-                🔒
+                ${IconLock('w-4 h-4 text-sky-300')}
               </div>
               <span class="font-sans font-bold text-sm text-white">Zero-Knowledge Vault Architecture</span>
             </div>
@@ -275,7 +278,7 @@ function getProductTelemetry(product) {
           <div class="flex items-center justify-between pb-3 mb-4 border-b border-indigo-900/60">
             <div class="flex items-center gap-2.5">
               <div class="w-7 h-7 rounded-lg bg-indigo-500/20 text-indigo-300 flex items-center justify-center text-sm shadow-inner">
-                🏥
+                ${IconActivity('w-4 h-4 text-indigo-300')}
               </div>
               <span class="font-sans font-bold text-sm text-white">Smart Hospital EMR & Workflow</span>
             </div>
@@ -395,7 +398,7 @@ function getProductTelemetry(product) {
             <div class="flex items-center justify-between pb-3 mb-4 border-b border-teal-900/60">
               <div class="flex items-center gap-2.5">
                 <div class="w-7 h-7 rounded-lg bg-teal-500/20 text-teal-300 flex items-center justify-center text-sm shadow-inner">
-                  🛠️
+                  ${IconWrench('w-4 h-4 text-teal-300')}
                 </div>
                 <span class="font-bold text-sm text-white">IT Support & Security Center Engine</span>
               </div>
@@ -442,7 +445,7 @@ function getProductTelemetry(product) {
           <div class="flex items-center justify-between pb-3 mb-4 border-b border-purple-900/60">
             <div class="flex items-center gap-2.5">
               <div class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-300 flex items-center justify-center text-sm shadow-inner">
-                ✨
+                ${IconBrainCircuit('w-4 h-4 text-purple-300')}
               </div>
               <span class="font-sans font-bold text-sm text-white">Biomedical ML Inference Pipeline</span>
             </div>

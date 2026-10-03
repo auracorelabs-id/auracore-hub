@@ -8,6 +8,8 @@
  * - No external GitHub repository links published or displayed.
  */
 
+import { IconLock, IconAudioLines, IconShieldCheck, IconMic, IconCpu, IconArrowRight } from './icons.js';
+
 export function renderBLineNoteDetail(activeDetailTab = 'ai-audio') {
   return `
     <div class="max-w-6xl xl:max-w-7xl mx-auto space-y-10 animate-fade-in pb-12 w-full">
@@ -96,7 +98,7 @@ export function renderBLineNoteDetail(activeDetailTab = 'ai-audio') {
 
             <div class="flex-1 max-w-md mx-auto bg-white px-3.5 py-1.5 rounded-full border border-slate-200 text-xs text-slate-600 flex items-center justify-between shadow-soft-sm">
               <div class="flex items-center gap-2 truncate">
-                <span class="text-emerald-600 font-bold text-xs">🔒</span>
+                ${IconLock('w-3.5 h-3.5 text-emerald-600')}
                 <span class="font-mono text-[11px] text-slate-700">https://blinenote.vercel.app/</span>
               </div>
               <span class="text-[10px] text-emerald-600 font-bold px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200/60">
@@ -127,47 +129,51 @@ export function renderBLineNoteDetail(activeDetailTab = 'ai-audio') {
           <button 
             type="button" 
             data-detail-tab="ai-audio"
-            class="detail-tab-btn flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all ${
+            class="detail-tab-btn flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all inline-flex items-center justify-center gap-1.5 ${
               activeDetailTab === 'ai-audio' ? 'bg-white text-content-main shadow-soft-md' : 'text-slate-500 hover:text-content-main'
             }"
           >
-            🎙️ Audio & Voice
+            ${IconAudioLines('w-4 h-4 text-amber-600')}
+            <span>Audio & Voice</span>
           </button>
           <button 
             type="button" 
             data-detail-tab="e2ee-security"
-            class="detail-tab-btn flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all ${
+            class="detail-tab-btn flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all inline-flex items-center justify-center gap-1.5 ${
               activeDetailTab === 'e2ee-security' ? 'bg-white text-content-main shadow-soft-md' : 'text-slate-500 hover:text-content-main'
             }"
           >
-            🔒 Enkripsi Data
+            ${IconLock('w-4 h-4 text-sky-600')}
+            <span>Enkripsi Data</span>
           </button>
           <button 
             type="button" 
             data-detail-tab="totp-auth"
-            class="detail-tab-btn flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all ${
+            class="detail-tab-btn flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all inline-flex items-center justify-center gap-1.5 ${
               activeDetailTab === 'totp-auth' ? 'bg-white text-content-main shadow-soft-md' : 'text-slate-500 hover:text-content-main'
             }"
           >
-            🛡️ 2FA TOTP
+            ${IconShieldCheck('w-4 h-4 text-indigo-600')}
+            <span>2FA TOTP</span>
           </button>
           <button 
             type="button" 
             data-detail-tab="smart-editor"
-            class="detail-tab-btn flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all ${
+            class="detail-tab-btn flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all inline-flex items-center justify-center gap-1.5 ${
               activeDetailTab === 'smart-editor' ? 'bg-white text-content-main shadow-soft-md' : 'text-slate-500 hover:text-content-main'
             }"
           >
-            ✍️ Checkbox & Editor
+            <span>Checkbox & Editor</span>
           </button>
           <button 
             type="button" 
             data-detail-tab="desktop-companion"
-            class="detail-tab-btn flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all ${
+            class="detail-tab-btn flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold transition-all inline-flex items-center justify-center gap-1.5 ${
               activeDetailTab === 'desktop-companion' ? 'bg-white text-content-main shadow-soft-md' : 'text-slate-500 hover:text-content-main'
             }"
           >
-            💻 Desktop Offline
+            ${IconCpu('w-4 h-4 text-purple-600')}
+            <span>Desktop Offline</span>
           </button>
         </div>
 
@@ -325,7 +331,7 @@ export function getDetailTabMarkup(tab) {
         <div class="space-y-5 animate-fade-in">
           <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
             <div class="w-10 h-10 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg font-bold">
-              🎙️
+              ${IconAudioLines('w-5 h-5 text-amber-700')}
             </div>
             <div>
               <h4 class="text-base font-extrabold text-content-main">Arsitektur Voice Recording & Speech-to-Text</h4>
@@ -370,7 +376,7 @@ export function getDetailTabMarkup(tab) {
         <div class="space-y-5 animate-fade-in">
           <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
             <div class="w-10 h-10 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center text-lg font-bold">
-              🔒
+              ${IconLock('w-5 h-5 text-sky-700')}
             </div>
             <div>
               <h4 class="text-base font-extrabold text-content-main">Proteksi Data Klien & Kriptografi Modern</h4>
@@ -400,7 +406,10 @@ export function getDetailTabMarkup(tab) {
             </div>
 
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
-              <div class="text-xs font-bold text-content-main">🛡️ Kebijakan Perlindungan Transmisi:</div>
+              <div class="text-xs font-bold text-content-main flex items-center gap-1.5">
+                ${IconShieldCheck('w-4 h-4 text-slate-700')}
+                <span>Kebijakan Perlindungan Transmisi:</span>
+              </div>
               <p class="text-[11px] text-slate-500 leading-relaxed">
                 Seluruh komunikasi jaringan dilindungi melalui protokol HTTPS/TLS modern. Data yang dikirimkan ke cloud storage telah melalui transformasi sandi kriptografis sehingga mencegah intersepsi data pada lapisan transmisi publik.
               </p>
@@ -414,7 +423,7 @@ export function getDetailTabMarkup(tab) {
         <div class="space-y-5 animate-fade-in">
           <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
             <div class="w-10 h-10 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-lg font-bold">
-              🛡️
+              ${IconShieldCheck('w-5 h-5 text-indigo-700')}
             </div>
             <div>
               <h4 class="text-base font-extrabold text-content-main">Two-Factor Authentication (2FA) Terstandarisasi</h4>
@@ -493,7 +502,7 @@ export function getDetailTabMarkup(tab) {
 
             <div class="p-4 rounded-2xl bg-slate-50 space-y-2 border border-slate-100">
               <div class="flex items-center gap-2">
-                <span class="text-base">🛡️</span>
+                ${IconShieldCheck('w-4 h-4 text-emerald-600')}
                 <span class="font-extrabold text-content-main">Sanitasi Konten dengan DOMPurify</span>
               </div>
               <p class="text-slate-500 leading-relaxed">
@@ -509,7 +518,7 @@ export function getDetailTabMarkup(tab) {
         <div class="space-y-5 animate-fade-in">
           <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
             <div class="w-10 h-10 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg font-bold">
-              💻
+              ${IconCpu('w-5 h-5 text-purple-700')}
             </div>
             <div>
               <h4 class="text-base font-extrabold text-content-main">BLineNote Desktop Offline Edition</h4>

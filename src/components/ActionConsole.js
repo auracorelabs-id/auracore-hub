@@ -8,6 +8,18 @@
  * @returns {string} HTML markup
  */
 
+import {
+  IconShieldCheck,
+  IconKeyRound,
+  IconAudioLines,
+  IconActivity,
+  IconCheck,
+  IconArrowRight,
+  IconDownload,
+  IconExternalLink,
+  IconTerminal
+} from './icons.js';
+
 export function renderActionConsole(productsList, labRoadmapData, activeTab = 'request') {
   return `
     <div id="console-section" class="max-w-6xl xl:max-w-7xl mx-auto pt-8 w-full">
@@ -18,9 +30,7 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg shadow-sm border border-blue-100">
-              <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+              ${IconTerminal('w-5 h-5 text-blue-600')}
             </div>
             <div>
               <h3 class="text-xl font-extrabold text-content-main">AuraCore Engineering Console</h3>
@@ -88,15 +98,21 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
                 <!-- Trust Points with Crisp Checkmarks -->
                 <div class="space-y-3 pt-3 border-t border-slate-200/80">
                   <div class="flex items-start gap-3 text-xs text-slate-600">
-                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</span>
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      ${IconCheck('w-3 h-3 text-emerald-600')}
+                    </span>
                     <span class="leading-relaxed">Diskusi teknis langsung dengan Lead Software Engineer (tanpa perantara sales).</span>
                   </div>
                   <div class="flex items-start gap-3 text-xs text-slate-600">
-                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</span>
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      ${IconCheck('w-3 h-3 text-emerald-600')}
+                    </span>
                     <span class="leading-relaxed">Non-Disclosure Agreement (NDA) & jaminan kepemilikan 100% kode sumber untuk klien.</span>
                   </div>
                   <div class="flex items-start gap-3 text-xs text-slate-600">
-                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</span>
+                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      ${IconCheck('w-3 h-3 text-emerald-600')}
+                    </span>
                     <span class="leading-relaxed">Rencana arsitektur, timeline rilis, dan estimasi biaya transparan tanpa biaya tersembunyi.</span>
                   </div>
                 </div>
@@ -200,7 +216,7 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
             <div class="p-4 rounded-2xl bg-emerald-50/50 hover:bg-emerald-50 transition-all flex flex-col justify-between space-y-3">
               <div class="space-y-1.5">
                 <span class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-sm shadow-sm">
-                  🛡️
+                  ${IconShieldCheck('w-4 h-4 text-white')}
                 </span>
                 <h5 class="font-extrabold text-sm text-content-main">Sentinel</h5>
                 <p class="text-xs text-slate-500">Android scanner executable mandiri Windows x64.</p>
@@ -212,9 +228,10 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
                 href="https://github.com/auracorelabs-id/auracore-sentinel/releases" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="pill-btn-primary bg-emerald-600 hover:bg-emerald-700 text-xs py-2 px-3 text-center shadow-none"
+                class="pill-btn-primary bg-emerald-600 hover:bg-emerald-700 text-xs py-2 px-3 text-center shadow-none flex items-center justify-center gap-1.5"
               >
-                Unduh (.exe) →
+                <span>Unduh (.exe)</span>
+                ${IconDownload('w-3.5 h-3.5')}
               </a>
             </div>
 
@@ -222,7 +239,7 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
             <div class="p-4 rounded-2xl bg-sky-50/50 hover:bg-sky-50 transition-all flex flex-col justify-between space-y-3">
               <div class="space-y-1.5">
                 <span class="w-8 h-8 rounded-xl bg-sky-600 text-white flex items-center justify-center font-bold text-sm shadow-sm">
-                  🔑
+                  ${IconKeyRound('w-4 h-4 text-white')}
                 </span>
                 <h5 class="font-extrabold text-sm text-content-main">SimpanPassword</h5>
                 <p class="text-xs text-slate-500">Zero-knowledge client-side password vault.</p>
@@ -234,9 +251,10 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
                 href="https://simpanpassword.my.id" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="pill-btn-primary bg-sky-600 hover:bg-sky-700 text-xs py-2 px-3 text-center shadow-none"
+                class="pill-btn-primary bg-sky-600 hover:bg-sky-700 text-xs py-2 px-3 text-center shadow-none flex items-center justify-center gap-1.5"
               >
-                Buka Web →
+                <span>Buka Web</span>
+                ${IconExternalLink('w-3.5 h-3.5')}
               </a>
             </div>
 
@@ -244,7 +262,7 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
             <div class="p-4 rounded-2xl bg-amber-50/50 hover:bg-amber-50 transition-all flex flex-col justify-between space-y-3">
               <div class="space-y-1.5">
                 <span class="w-8 h-8 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold text-sm shadow-sm">
-                  🎙️
+                  ${IconAudioLines('w-4 h-4 text-white')}
                 </span>
                 <h5 class="font-extrabold text-sm text-content-main">BLineNote</h5>
                 <p class="text-xs text-slate-500">Catatan suara cerdas AI Gemini & E2EE 2FA.</p>
@@ -256,9 +274,10 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
                 href="https://blinenote.vercel.app" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="pill-btn-primary bg-amber-600 hover:bg-amber-700 text-xs py-2 px-3 text-center shadow-none"
+                class="pill-btn-primary bg-amber-600 hover:bg-amber-700 text-xs py-2 px-3 text-center shadow-none flex items-center justify-center gap-1.5"
               >
-                Buka Web →
+                <span>Buka Web</span>
+                ${IconExternalLink('w-3.5 h-3.5')}
               </a>
             </div>
 
@@ -266,7 +285,7 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
             <div class="p-4 rounded-2xl bg-indigo-50/50 hover:bg-indigo-50 transition-all flex flex-col justify-between space-y-3">
               <div class="space-y-1.5">
                 <span class="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-sm shadow-sm">
-                  🏥
+                  ${IconActivity('w-4 h-4 text-white')}
                 </span>
                 <h5 class="font-extrabold text-sm text-content-main">RS Health</h5>
                 <p class="text-xs text-slate-500">Sistem manajemen RS cerdas & EMR terpadu.</p>
@@ -278,9 +297,10 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
                 type="button" 
                 data-action="switch-to-request" 
                 data-preselect="health"
-                class="pill-btn-primary bg-indigo-600 hover:bg-indigo-700 text-xs py-2 px-3 text-center shadow-none"
+                class="pill-btn-primary bg-indigo-600 hover:bg-indigo-700 text-xs py-2 px-3 text-center shadow-none flex items-center justify-center gap-1.5"
               >
-                Minta Akses →
+                <span>Minta Akses</span>
+                ${IconArrowRight('w-3.5 h-3.5')}
               </button>
             </div>
           </div>

@@ -7,6 +7,8 @@
  * @returns {string} HTML markup
  */
 
+import { getProductIcon, IconWhatsApp } from './icons.js';
+
 export function renderNavbar(navigationData) {
   const { brand } = navigationData;
 
@@ -71,8 +73,8 @@ export function renderNavbar(navigationData) {
                     data-product-id="sentinel"
                     class="nav-product-link flex items-start gap-3.5 p-3 rounded-2xl hover:bg-emerald-50/60 transition-all duration-200 group/item border border-transparent hover:border-emerald-100"
                   >
-                    <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover/item:scale-105 transition-transform">
-                      🛡️
+                    <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 group-hover/item:scale-105 transition-transform">
+                      ${getProductIcon('sentinel', 'w-4 h-4 text-emerald-700')}
                     </div>
                     <div>
                       <div class="flex items-center gap-2">
@@ -92,8 +94,8 @@ export function renderNavbar(navigationData) {
                     data-product-id="simpanpassword"
                     class="nav-product-link flex items-start gap-3.5 p-3 rounded-2xl hover:bg-sky-50/60 transition-all duration-200 group/item border border-transparent hover:border-sky-100"
                   >
-                    <div class="w-9 h-9 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover/item:scale-105 transition-transform">
-                      🔑
+                    <div class="w-9 h-9 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center flex-shrink-0 group-hover/item:scale-105 transition-transform">
+                      ${getProductIcon('simpanpassword', 'w-4 h-4 text-sky-700')}
                     </div>
                     <div>
                       <div class="flex items-center gap-2">
@@ -113,8 +115,8 @@ export function renderNavbar(navigationData) {
                     data-product-id="blinenote"
                     class="nav-product-link flex items-start gap-3.5 p-3 rounded-2xl hover:bg-amber-50/60 transition-all duration-200 group/item border border-transparent hover:border-amber-100"
                   >
-                    <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover/item:scale-105 transition-transform">
-                      🎙️
+                    <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 group-hover/item:scale-105 transition-transform">
+                      ${getProductIcon('blinenote', 'w-4 h-4 text-amber-700')}
                     </div>
                     <div>
                       <div class="flex items-center gap-2">
@@ -134,8 +136,8 @@ export function renderNavbar(navigationData) {
                     data-product-id="health"
                     class="nav-product-link flex items-start gap-3.5 p-3 rounded-2xl hover:bg-indigo-50/60 transition-all duration-200 group/item border border-transparent hover:border-indigo-100"
                   >
-                    <div class="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover/item:scale-105 transition-transform">
-                      🏥
+                    <div class="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center flex-shrink-0 group-hover/item:scale-105 transition-transform">
+                      ${getProductIcon('health', 'w-4 h-4 text-indigo-700')}
                     </div>
                     <div>
                       <div class="flex items-center gap-2">
@@ -155,8 +157,8 @@ export function renderNavbar(navigationData) {
                     data-product-id="ai-analytics"
                     class="nav-product-link flex items-start gap-3.5 p-3 rounded-2xl hover:bg-purple-50/60 transition-all duration-200 group/item border border-transparent hover:border-purple-100"
                   >
-                    <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover/item:scale-105 transition-transform">
-                      ✨
+                    <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center flex-shrink-0 group-hover/item:scale-105 transition-transform">
+                      ${getProductIcon('ai-analytics', 'w-4 h-4 text-purple-700')}
                     </div>
                     <div>
                       <div class="flex items-center gap-2">
@@ -176,8 +178,8 @@ export function renderNavbar(navigationData) {
                     data-product-id="itsupport"
                     class="nav-product-link flex items-start gap-3.5 p-3 rounded-2xl hover:bg-teal-50/60 transition-all duration-200 group/item border border-transparent hover:border-teal-100"
                   >
-                    <div class="w-9 h-9 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-sm flex-shrink-0 group-hover/item:scale-105 transition-transform">
-                      🛠️
+                    <div class="w-9 h-9 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center flex-shrink-0 group-hover/item:scale-105 transition-transform">
+                      ${getProductIcon('itsupport', 'w-4 h-4 text-teal-700')}
                     </div>
                     <div>
                       <div class="flex items-center gap-2">
@@ -246,7 +248,7 @@ export function renderNavbar(navigationData) {
             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 text-xs font-bold transition-all shadow-sm"
             title="Hubungi WhatsApp Resmi AuraCore Labs"
           >
-            <span class="text-sm">💬</span>
+            ${IconWhatsApp('w-3.5 h-3.5')}
             <span class="hidden sm:inline font-mono text-[11px]">+62 822-5665-7700</span>
             <span class="sm:hidden text-[11px]">WA</span>
           </a>
@@ -277,23 +279,29 @@ export function renderNavbar(navigationData) {
       <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-xl px-5 pt-3 pb-6 space-y-4">
         <div class="space-y-1">
           <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-2 py-1">Pilih Detail Produk</div>
-          <a href="#product-sentinel" data-action="open-product-detail" data-product-id="sentinel" class="block px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
-            🛡️ AuraCore Sentinel <span class="text-xs text-emerald-600 font-semibold">(v1.0.0)</span>
+          <a href="#product-sentinel" data-action="open-product-detail" data-product-id="sentinel" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
+            ${getProductIcon('sentinel', 'w-4 h-4 text-emerald-600')}
+            <span>AuraCore Sentinel <span class="text-xs text-emerald-600 font-semibold">(v1.0.0)</span></span>
           </a>
-          <a href="#product-simpanpassword" data-action="open-product-detail" data-product-id="simpanpassword" class="block px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
-            🔑 SimpanPassword <span class="text-xs text-sky-600 font-semibold">(Live Web)</span>
+          <a href="#product-simpanpassword" data-action="open-product-detail" data-product-id="simpanpassword" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
+            ${getProductIcon('simpanpassword', 'w-4 h-4 text-sky-600')}
+            <span>SimpanPassword <span class="text-xs text-sky-600 font-semibold">(Live Web)</span></span>
           </a>
-          <a href="#product-blinenote" data-action="open-product-detail" data-product-id="blinenote" class="block px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
-            🎙️ BLineNote <span class="text-xs text-amber-600 font-semibold">(Live AI)</span>
+          <a href="#product-blinenote" data-action="open-product-detail" data-product-id="blinenote" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
+            ${getProductIcon('blinenote', 'w-4 h-4 text-amber-600')}
+            <span>BLineNote <span class="text-xs text-amber-600 font-semibold">(Live AI)</span></span>
           </a>
-          <a href="#product-health" data-action="open-product-detail" data-product-id="health" class="block px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
-            🏥 AuraCore Health <span class="text-xs text-indigo-600 font-semibold">(Alpha)</span>
+          <a href="#product-health" data-action="open-product-detail" data-product-id="health" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
+            ${getProductIcon('health', 'w-4 h-4 text-indigo-600')}
+            <span>AuraCore Health <span class="text-xs text-indigo-600 font-semibold">(Alpha)</span></span>
           </a>
-          <a href="#product-ai-analytics" data-action="open-product-detail" data-product-id="ai-analytics" class="block px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
-            ✨ AI Health Analytics <span class="text-xs text-purple-600 font-semibold">(R&D)</span>
+          <a href="#product-ai-analytics" data-action="open-product-detail" data-product-id="ai-analytics" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
+            ${getProductIcon('ai-analytics', 'w-4 h-4 text-purple-600')}
+            <span>AI Health Analytics <span class="text-xs text-purple-600 font-semibold">(R&D)</span></span>
           </a>
-          <a href="#product-itsupport" data-action="open-product-detail" data-product-id="itsupport" class="block px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
-            🛠️ IT Support Center <span class="text-xs text-teal-600 font-semibold">(v3.2.0)</span>
+          <a href="#product-itsupport" data-action="open-product-detail" data-product-id="itsupport" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50">
+            ${getProductIcon('itsupport', 'w-4 h-4 text-teal-600')}
+            <span>IT Support Center <span class="text-xs text-teal-600 font-semibold">(v3.2.0)</span></span>
           </a>
         </div>
         <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
@@ -303,7 +311,8 @@ export function renderNavbar(navigationData) {
             rel="noopener noreferrer" 
             class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold text-xs"
           >
-            <span>💬 Hubungi via WhatsApp (+62 822-5665-7700)</span>
+            ${IconWhatsApp('w-4 h-4')}
+            <span>Hubungi via WhatsApp (+62 822-5665-7700)</span>
           </a>
           <a href="#console-section" class="pill-btn-primary text-xs py-2.5 text-center">Ajukan Akses & Kolaborasi</a>
         </div>

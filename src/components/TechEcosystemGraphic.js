@@ -197,7 +197,10 @@ export function renderTechEcosystemGraphic(activeProductId = 'sentinel') {
           
           <!-- Emblem Icon Container -->
           <rect x="170" y="85" width="40" height="34" rx="10" fill="#ecfdf5" />
-          <text x="190" y="108" text-anchor="middle" font-size="18">🛡️</text>
+          <g transform="translate(178, 90)" stroke="#059669" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+            <path d="m9 12 2 2 4-4" />
+          </g>
 
           <!-- Label Tag -->
           <text x="190" y="132" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="800" fill="#065f46">Sentinel</text>
@@ -225,7 +228,10 @@ export function renderTechEcosystemGraphic(activeProductId = 'sentinel') {
           
           <!-- Emblem Icon Container -->
           <rect x="590" y="85" width="40" height="34" rx="10" fill="#f0f9ff" />
-          <text x="610" y="108" text-anchor="middle" font-size="18">🔑</text>
+          <g transform="translate(598, 90)" stroke="#0284c7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z" />
+            <circle cx="16.5" cy="7.5" r=".5" fill="#0284c7" />
+          </g>
 
           <!-- Label Tag -->
           <text x="610" y="132" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="800" fill="#0369a1">Password</text>
@@ -253,7 +259,9 @@ export function renderTechEcosystemGraphic(activeProductId = 'sentinel') {
           
           <!-- Emblem Icon Container -->
           <rect x="170" y="285" width="40" height="34" rx="10" fill="#eef2ff" />
-          <text x="190" y="308" text-anchor="middle" font-size="18">🏥</text>
+          <g transform="translate(178, 290)" stroke="#4f46e5" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.48 12H2" />
+          </g>
 
           <!-- Label Tag -->
           <text x="190" y="332" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="800" fill="#3730a3">RS Health</text>
@@ -281,7 +289,14 @@ export function renderTechEcosystemGraphic(activeProductId = 'sentinel') {
           
           <!-- Emblem Icon Container -->
           <rect x="590" y="285" width="40" height="34" rx="10" fill="#faf5ff" />
-          <text x="610" y="308" text-anchor="middle" font-size="18">✨</text>
+          <g transform="translate(598, 290)" stroke="#7c3aed" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+            <path d="M9 13a4.5 4.5 0 0 0 3-4" />
+            <path d="M6 18a4 4 0 0 1-1.967-.516" />
+            <path d="M12 13h4" />
+            <path d="M12 18h6a2 2 0 0 1 2 2v1" />
+            <path d="M12 8h8" />
+          </g>
 
           <!-- Label Tag -->
           <text x="610" y="332" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="800" fill="#581c87">AI Health</text>
@@ -309,7 +324,14 @@ export function renderTechEcosystemGraphic(activeProductId = 'sentinel') {
           
           <!-- Emblem Icon Container -->
           <rect x="380" y="38" width="40" height="30" rx="10" fill="#fffbeb" />
-          <text x="400" y="58" text-anchor="middle" font-size="16">🎙️</text>
+          <g transform="translate(388, 41)" stroke="#d97706" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 10v3" />
+            <path d="M6 6v11" />
+            <path d="M10 3v18" />
+            <path d="M14 8v7" />
+            <path d="M18 5v13" />
+            <path d="M22 10v3" />
+          </g>
 
           <!-- Label Tag -->
           <text x="400" y="83" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" fill="#b45309">BLineNote</text>
@@ -337,7 +359,9 @@ export function renderTechEcosystemGraphic(activeProductId = 'sentinel') {
           
           <!-- Emblem Icon Container -->
           <rect x="380" y="342" width="40" height="30" rx="10" fill="#f0fdfa" />
-          <text x="400" y="362" text-anchor="middle" font-size="16">🛠️</text>
+          <g transform="translate(388, 345)" stroke="#0f766e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          </g>
 
           <!-- Label Tag -->
           <text x="400" y="388" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" fill="#115e59">IT Support</text>
@@ -354,7 +378,7 @@ export function renderTechEcosystemGraphic(activeProductId = 'sentinel') {
       <!-- Subtitle Helper Note -->
       <div class="text-center mt-1">
         <p class="text-[11px] text-slate-400 font-semibold tracking-wide">
-          💡 Klik node di atas untuk menjelajahi arsitektur dan kapabilitas masing-masing prototipe
+          Klik node di atas untuk menjelajahi arsitektur dan kapabilitas masing-masing prototipe
         </p>
       </div>
 

@@ -5,11 +5,23 @@
  * designed to convert B2B clients and commercial leads.
  */
 
+import { 
+  IconActivity, 
+  IconAudioLines, 
+  IconShieldCheck, 
+  IconCpu, 
+  IconTarget, 
+  IconFileCode, 
+  IconCheck, 
+  IconArrowRight,
+  IconWhatsApp
+} from './icons.js';
+
 export function renderServicesSection() {
   const services = [
     {
       id: 'enterprise-healthcare',
-      icon: '🏥',
+      icon: IconActivity('w-6 h-6 text-indigo-600'),
       title: 'Sistem Digital Enterprise & Healthcare EMR',
       badge: 'Solusi Utama',
       badgeColor: 'bg-indigo-50 text-indigo-700 border-indigo-200',
@@ -25,7 +37,7 @@ export function renderServicesSection() {
     },
     {
       id: 'generative-ai',
-      icon: '🎙️',
+      icon: IconAudioLines('w-6 h-6 text-amber-600'),
       title: 'Integrasi Generative AI, Speech & Otomasi Cerdas',
       badge: 'Teknologi Unggulan',
       badgeColor: 'bg-amber-50 text-amber-700 border-amber-200',
@@ -41,7 +53,7 @@ export function renderServicesSection() {
     },
     {
       id: 'cybersecurity',
-      icon: '🛡️',
+      icon: IconShieldCheck('w-6 h-6 text-sky-600'),
       title: 'Keamanan Siber, Zero-Knowledge Vault & Audit Kode',
       badge: 'Keamanan Tingkat Tinggi',
       badgeColor: 'bg-sky-50 text-sky-700 border-sky-200',
@@ -57,7 +69,7 @@ export function renderServicesSection() {
     },
     {
       id: 'desktop-native',
-      icon: '⚡',
+      icon: IconCpu('w-6 h-6 text-teal-600'),
       title: 'Aplikasi Desktop Windows Native & Otomasi Hardware',
       badge: 'Performa Cepat',
       badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
@@ -127,7 +139,9 @@ export function renderServicesSection() {
           <div class="organic-card p-6 sm:p-8 space-y-5 border ${s.accent} transition-all duration-300 hover:shadow-soft-xl flex flex-col justify-between">
             <div class="space-y-4">
               <div class="flex items-center justify-between gap-3">
-                <span class="text-3xl">${s.icon}</span>
+                <div class="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-soft-sm flex-shrink-0">
+                  ${s.icon}
+                </div>
                 <span class="text-[11px] font-bold px-2.5 py-1 rounded-full border ${s.badgeColor}">
                   ${s.badge}
                 </span>
@@ -145,7 +159,7 @@ export function renderServicesSection() {
                 <ul class="space-y-2">
                   ${s.capabilities.map(cap => `
                     <li class="flex items-start gap-2 text-xs text-slate-600">
-                      <span class="text-emerald-500 font-bold flex-shrink-0 mt-0.5">✓</span>
+                      ${IconCheck('w-3.5 h-3.5 text-emerald-600 flex-shrink-0 mt-0.5')}
                       <span>${cap}</span>
                     </li>
                   `).join('')}
@@ -162,10 +176,10 @@ export function renderServicesSection() {
                 href="#console-section" 
                 data-action="switch-to-consultation"
                 data-service="${s.id}"
-                class="font-bold text-brand-blue hover:text-blue-700 transition-colors inline-flex items-center gap-1"
+                class="font-bold text-brand-blue hover:text-blue-700 transition-colors inline-flex items-center gap-1.5"
               >
                 <span>Konsultasikan</span>
-                <span>→</span>
+                ${IconArrowRight('w-3.5 h-3.5')}
               </a>
             </div>
           </div>
@@ -183,7 +197,7 @@ export function renderServicesSection() {
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2.5">
             <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg">
-              🎯
+              ${IconTarget('w-5 h-5 text-emerald-400')}
             </div>
             <h4 class="text-sm font-bold text-white">Bicara Langsung dengan Engineer</h4>
             <p class="text-xs text-slate-300 leading-relaxed font-normal">
@@ -193,7 +207,7 @@ export function renderServicesSection() {
 
           <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2.5">
             <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-lg">
-              🔒
+              ${IconShieldCheck('w-5 h-5 text-sky-400')}
             </div>
             <h4 class="text-sm font-bold text-white">Keamanan Kode Bergaransi</h4>
             <p class="text-xs text-slate-300 leading-relaxed font-normal">
@@ -203,7 +217,7 @@ export function renderServicesSection() {
 
           <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2.5">
             <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-lg">
-              📄
+              ${IconFileCode('w-5 h-5 text-indigo-400')}
             </div>
             <h4 class="text-sm font-bold text-white">Source Code 100% Hak Milik Anda</h4>
             <p class="text-xs text-slate-300 leading-relaxed font-normal">
@@ -247,7 +261,8 @@ export function renderServicesSection() {
             rel="noopener noreferrer" 
             class="pill-btn-primary px-6 py-3 text-xs font-bold w-full sm:w-auto flex items-center justify-center gap-2 shadow-sm"
           >
-            <span>💬 Diskusi Cepat via WhatsApp</span>
+            ${IconWhatsApp('w-4 h-4')}
+            <span>Diskusi Cepat via WhatsApp</span>
           </a>
           <a 
             href="#console-section" 

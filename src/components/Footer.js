@@ -5,6 +5,8 @@
  * @returns {string} HTML markup
  */
 
+import { IconWhatsApp } from './icons.js';
+
 export function renderFooter(navigationData) {
   const { socialLinks, legalLinks } = navigationData;
 
@@ -36,7 +38,7 @@ export function renderFooter(navigationData) {
               rel="noopener noreferrer" 
               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200/60 transition-colors font-bold"
             >
-              <span>💬</span>
+              ${IconWhatsApp('w-3.5 h-3.5')}
               <span>WhatsApp: +62 822-5665-7700</span>
             </a>
             ${socialLinks.filter(s => s.name !== 'WhatsApp').map(s => `

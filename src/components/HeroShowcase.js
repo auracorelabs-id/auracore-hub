@@ -6,6 +6,14 @@
  */
 
 import { renderTechEcosystemGraphic } from './TechEcosystemGraphic.js';
+import { 
+  getProductIcon, 
+  IconCheck, 
+  IconArrowRight, 
+  IconExternalLink, 
+  IconDownload,
+  IconWhatsApp
+} from './icons.js';
 
 export function renderHeroShowcase(productsList) {
   return `
@@ -44,7 +52,8 @@ export function renderHeroShowcase(productsList) {
             rel="noopener noreferrer" 
             class="inline-flex items-center gap-1.5 px-4 py-3 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 text-xs font-bold transition-all"
           >
-            <span>💬 Konsultasi Cepat (+62 822-5665-7700)</span>
+            ${IconWhatsApp('w-4 h-4')}
+            <span>Konsultasi Cepat (+62 822-5665-7700)</span>
           </a>
         </div>
       </div>
@@ -92,8 +101,8 @@ export function renderHeroShowcase(productsList) {
               <div class="space-y-4">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
                   <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-2xl ${product.accentBg} flex items-center justify-center font-bold text-lg flex-shrink-0 group-hover:scale-105 transition-transform shadow-sm">
-                      ${getProductEmoji(product.id)}
+                    <div class="w-10 h-10 rounded-2xl ${product.accentBg} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-sm border ${product.accentBorder}">
+                      ${getProductIcon(product.id, `w-5 h-5 ${product.accentText}`)}
                     </div>
                     <div>
                       <div class="flex items-center gap-2 flex-wrap">
@@ -129,8 +138,10 @@ export function renderHeroShowcase(productsList) {
                 <!-- Core Highlights -->
                 <div class="space-y-2 pt-1">
                   ${product.highlights.map(h => `
-                    <div class="p-2.5 rounded-xl bg-slate-50/80 text-[11px] text-slate-600 flex items-start gap-2 border border-slate-100/80">
-                      <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-[10px] flex-shrink-0 mt-0.5">✓</span>
+                    <div class="p-2.5 rounded-xl bg-slate-50/80 text-[11px] text-slate-600 flex items-start gap-2.5 border border-slate-100/80">
+                      <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        ${IconCheck('w-3 h-3')}
+                      </span>
                       <span class="font-medium leading-snug">${h}</span>
                     </div>
                   `).join('')}
@@ -158,10 +169,10 @@ export function renderHeroShowcase(productsList) {
                     type="button"
                     data-action="open-product-detail"
                     data-product-id="${product.id}"
-                    class="pill-btn-primary text-xs py-2 px-4 flex items-center gap-1.5 shadow-sm"
+                    class="pill-btn-primary text-xs py-2 px-4 flex items-center gap-2 shadow-sm"
                   >
                     <span>Detail Spesifikasi</span>
-                    <span>→</span>
+                    ${IconArrowRight('w-3.5 h-3.5')}
                   </button>
 
                   <!-- Button 2: Direct Launch or Modal Request -->
@@ -170,19 +181,20 @@ export function renderHeroShowcase(productsList) {
                       href="${product.actions.primary.url}" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      class="pill-btn-secondary text-xs py-2 px-3.5 flex items-center gap-1 text-slate-600 font-bold"
+                      class="pill-btn-secondary text-xs py-2 px-3.5 flex items-center gap-1.5 text-slate-600 font-bold"
                     >
                       <span>${product.actions.primary.type === 'download' ? 'Download' : 'Buka'}</span>
-                      <span>↗</span>
+                      ${product.actions.primary.type === 'download' ? IconDownload('w-3.5 h-3.5') : IconExternalLink('w-3.5 h-3.5')}
                     </a>
                   ` : `
                     <button 
                       type="button" 
                       data-action="open-request-modal" 
                       data-preselect="${product.id}"
-                      class="pill-btn-secondary text-xs py-2 px-3.5 text-slate-600 font-bold"
+                      class="pill-btn-secondary text-xs py-2 px-3.5 text-slate-600 font-bold flex items-center gap-1.5"
                     >
                       <span>Demo</span>
+                      ${IconArrowRight('w-3.5 h-3.5')}
                     </button>
                   `}
                 </div>
@@ -197,16 +209,4 @@ export function renderHeroShowcase(productsList) {
 
     </div>
   `;
-}
-
-function getProductEmoji(id) {
-  switch (id) {
-    case 'sentinel': return '🛡️';
-    case 'simpanpassword': return '🔑';
-    case 'blinenote': return '🎙️';
-    case 'health': return '🏥';
-    case 'ai-analytics': return '✨';
-    case 'itsupport': return '🛠️';
-    default: return '📦';
-  }
 }
