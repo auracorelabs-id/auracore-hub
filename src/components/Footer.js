@@ -10,7 +10,7 @@ export function renderFooter(navigationData) {
 
   return `
     <footer class="mt-16 border-t border-slate-200/80 bg-white/70 backdrop-blur-sm py-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-100">
           <!-- Brand Info -->

@@ -10,7 +10,7 @@
 
 export function renderActionConsole(productsList, labRoadmapData, activeTab = 'request') {
   return `
-    <div id="console-section" class="max-w-4xl mx-auto pt-8">
+    <div id="console-section" class="max-w-6xl xl:max-w-7xl mx-auto pt-8 w-full">
       
       <div class="organic-card p-6 sm:p-10 border border-slate-100 space-y-8">
         
@@ -66,94 +66,121 @@ export function renderActionConsole(productsList, labRoadmapData, activeTab = 'r
           </div>
         </div>
 
-        <!-- TAB CONTENT 1: Project Consultation & Service Inquiry Form -->
-        <div id="tab-content-request" class="${activeTab === 'request' ? 'block' : 'hidden'} space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-gradient-to-r from-slate-50 via-blue-50/40 to-slate-50 border border-slate-200/80">
-            <div>
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100/70 text-blue-800 text-[10px] font-bold uppercase tracking-wider mb-1.5">
-                <span>Free Initial Architecture Review</span>
+        <!-- TAB CONTENT 1: Project Consultation & Service Inquiry Form (Widescreen 2-Column Split) -->
+        <div id="tab-content-request" class="${activeTab === 'request' ? 'block' : 'hidden'}">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Column: Trust Signals & Direct WhatsApp Box (5 Cols) -->
+            <div class="lg:col-span-5 space-y-5 p-6 rounded-2xl bg-gradient-to-br from-slate-50 via-blue-50/40 to-slate-50 border border-slate-200/80">
+              <div>
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100/70 text-blue-800 text-[10px] font-bold uppercase tracking-wider mb-2">
+                  <span>Free Initial Architecture Review</span>
+                </div>
+                <h4 class="text-lg font-bold text-content-main leading-snug">Konsultasi Kebutuhan Software & Penawaran</h4>
+                <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                  Ceritakan kebutuhan sistem digital atau tantangan teknis institusi Anda. Tim arsitek perangkat lunak kami akan menelaah dan memberikan estimasi transparan tanpa biaya komitmen awal.
+                </p>
               </div>
-              <h4 class="text-base font-bold text-content-main">Konsultasi Kebutuhan Software & Permintaan Penawaran</h4>
-              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                Ceritakan kebutuhan sistem digital atau tantangan teknis institusi Anda. Tim arsitek perangkat lunak kami akan menelaah dan memberikan estimasi transparan tanpa biaya komitmen awal.
-              </p>
+
+              <!-- Trust Points -->
+              <div class="space-y-2.5 pt-2 border-t border-slate-200/60">
+                <div class="flex items-start gap-2.5 text-xs text-slate-600">
+                  <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-[10px] flex-shrink-0 mt-0.5">✓</span>
+                  <span>Diskusi langsung dengan software engineer berpengalaman (tanpa perantara sales).</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-600">
+                  <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-[10px] flex-shrink-0 mt-0.5">✓</span>
+                  <span>Jaminan kerahasiaan ide & kepemilikan 100% kode sumber (Source Code).</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-600">
+                  <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-[10px] flex-shrink-0 mt-0.5">✓</span>
+                  <span>Estimasi arsitektur dan durasi pengerjaan yang realistis dan transparan.</span>
+                </div>
+              </div>
+
+              <!-- Official WhatsApp Box -->
+              <div class="pt-3 border-t border-slate-200/60">
+                <span class="text-[11px] font-semibold text-slate-400 block mb-1.5">Saluran Komunikasi Resmi:</span>
+                <a 
+                  href="https://wa.me/6282256657700" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition-colors shadow-sm w-full justify-center sm:justify-start"
+                >
+                  <span>💬 WhatsApp Resmi: +62 822-5665-7700</span>
+                </a>
+              </div>
             </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <a 
-                href="https://wa.me/6282256657700" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition-colors shadow-sm"
-              >
-                <span>💬 WhatsApp: +62 822-5665-7700</span>
-              </a>
+
+            <!-- Right Column: Interactive Consultation Form (7 Cols) -->
+            <div class="lg:col-span-7">
+              <form id="prototype-request-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="req-name" class="block text-xs font-bold text-slate-600 mb-1.5">Nama Lengkap / Instansi / Perusahaan *</label>
+                    <input 
+                      type="text" 
+                      id="req-name" 
+                      required 
+                      placeholder="cth. Dr. Budi Santoso / RS Mitra Husada" 
+                      class="pill-input"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="req-email" class="block text-xs font-bold text-slate-600 mb-1.5">Email Kontak Resmi *</label>
+                    <input 
+                      type="email" 
+                      id="req-email" 
+                      required 
+                      placeholder="budi@mitrahusada.id" 
+                      class="pill-input"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="req-product" class="block text-xs font-bold text-slate-600 mb-1.5">Fokus Solusi / Layanan yang Dibutuhkan</label>
+                    <select id="req-product" class="pill-input bg-slate-50 cursor-pointer">
+                      <option value="Sistem Informasi RS & Rekam Medis (EMR SatuSehat)">Sistem Informasi RS & Rekam Medis (EMR SatuSehat)</option>
+                      <option value="IT Support & Security Center (Suite Perbaikan Sistem)">IT Support & Security Center (Suite Perbaikan Sistem)</option>
+                      <option value="Integrasi Generative AI & Transkripsi Suara (Speech-to-Text)">Integrasi Generative AI & Transkripsi Suara (Speech-to-Text)</option>
+                      <option value="Keamanan Siber, Zero-Knowledge Vault & Audit Kode">Keamanan Siber, Zero-Knowledge Vault & Audit Kode</option>
+                      <option value="Software Desktop Windows x64 & Otomasi ADB/Hardware">Software Desktop Windows x64 & Otomasi ADB/Hardware</option>
+                      <option value="Aplikasi Web / Mobile Enterprise Kustom">Aplikasi Web / Mobile Enterprise Kustom</option>
+                      <option value="Uji Coba Prototipe Internal AuraCore">Uji Coba Prototipe Internal AuraCore</option>
+                      <option value="Konsultasi Kemitraan & Solusi Lainnya">Konsultasi Kemitraan & Solusi Lainnya</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="req-notes" class="block text-xs font-bold text-slate-600 mb-1.5">Uraian Kebutuhan Proyek / Target Waktu</label>
+                    <input 
+                      type="text" 
+                      id="req-notes" 
+                      placeholder="cth. Modul antrean klinik, estimasi rilis Q3 2026" 
+                      class="pill-input"
+                    />
+                  </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-3">
+                  <span class="text-xs text-slate-400">
+                    Pesan akan otomatis terformat rapi dan langsung diteruskan ke WhatsApp resmi kami.
+                  </span>
+                  <button 
+                    type="submit" 
+                    class="pill-btn-primary px-8 py-3 text-sm font-bold w-full sm:w-auto flex items-center justify-center gap-2 shadow-soft-sm"
+                  >
+                    <span>Kirim Konsultasi via WhatsApp</span>
+                    <span>🚀</span>
+                  </button>
+                </div>
+              </form>
             </div>
+
           </div>
-
-          <form id="prototype-request-form" class="space-y-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label for="req-name" class="block text-xs font-bold text-slate-600 mb-1.5">Nama Lengkap / Instansi / Perusahaan *</label>
-                <input 
-                  type="text" 
-                  id="req-name" 
-                  required 
-                  placeholder="cth. Dr. Budi Santoso / RS Mitra Husada" 
-                  class="pill-input"
-                />
-              </div>
-
-              <div>
-                <label for="req-email" class="block text-xs font-bold text-slate-600 mb-1.5">Email Kontak Resmi *</label>
-                <input 
-                  type="email" 
-                  id="req-email" 
-                  required 
-                  placeholder="budi@mitrahusada.id" 
-                  class="pill-input"
-                />
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label for="req-product" class="block text-xs font-bold text-slate-600 mb-1.5">Fokus Solusi / Layanan yang Dibutuhkan</label>
-                <select id="req-product" class="pill-input bg-slate-50 cursor-pointer">
-                  <option value="Sistem Informasi RS & Rekam Medis (EMR SatuSehat)">Sistem Informasi RS & Rekam Medis (EMR SatuSehat)</option>
-                  <option value="IT Support & Security Center (Suite Perbaikan Sistem)">IT Support & Security Center (Suite Perbaikan Sistem)</option>
-                  <option value="Integrasi Generative AI & Transkripsi Suara (Speech-to-Text)">Integrasi Generative AI & Transkripsi Suara (Speech-to-Text)</option>
-                  <option value="Keamanan Siber, Zero-Knowledge Vault & Audit Kode">Keamanan Siber, Zero-Knowledge Vault & Audit Kode</option>
-                  <option value="Software Desktop Windows x64 & Otomasi ADB/Hardware">Software Desktop Windows x64 & Otomasi ADB/Hardware</option>
-                  <option value="Aplikasi Web / Mobile Enterprise Kustom">Aplikasi Web / Mobile Enterprise Kustom</option>
-                  <option value="Uji Coba Prototipe Internal AuraCore">Uji Coba Prototipe Internal AuraCore</option>
-                  <option value="Konsultasi Kemitraan & Solusi Lainnya">Konsultasi Kemitraan & Solusi Lainnya</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="req-notes" class="block text-xs font-bold text-slate-600 mb-1.5">Uraian Kebutuhan Proyek / Target Waktu</label>
-                <input 
-                  type="text" 
-                  id="req-notes" 
-                  placeholder="cth. Modul antrean klinik, estimasi rilis Q3 2026" 
-                  class="pill-input"
-                />
-              </div>
-            </div>
-
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-3">
-              <span class="text-xs text-slate-400">
-                Pesan akan terformat rapi dan langsung diteruskan ke WhatsApp resmi tim engineer kami.
-              </span>
-              <button 
-                type="submit" 
-                class="pill-btn-primary px-8 py-3 text-sm font-bold w-full sm:w-auto flex items-center justify-center gap-2"
-              >
-                <span>Kirim Konsultasi via WhatsApp</span>
-                <span>🚀</span>
-              </button>
-            </div>
-          </form>
         </div>
 
         <!-- TAB CONTENT 2: Quick Links & Instant Launch -->

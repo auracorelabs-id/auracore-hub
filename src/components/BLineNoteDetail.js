@@ -10,7 +10,7 @@
 
 export function renderBLineNoteDetail(activeDetailTab = 'ai-audio') {
   return `
-    <div class="max-w-4xl mx-auto space-y-10 animate-fade-in pb-12">
+    <div class="max-w-6xl xl:max-w-7xl mx-auto space-y-10 animate-fade-in pb-12 w-full">
       
       <!-- Top Navigation & Breadcrumbs -->
       <div class="flex items-center justify-between gap-4 pt-2">

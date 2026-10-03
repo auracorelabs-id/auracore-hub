@@ -78,7 +78,7 @@ function mountApp() {
 
   app.innerHTML = `
     ${renderNavbar(navigation)}
-    <main id="main-content" class="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-12 space-y-16">
+    <main id="main-content" class="flex-1 max-w-7xl xl:max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-6 sm:py-12 space-y-20">
       <!-- Injected by renderContent() -->
     </main>
     ${renderFooter(navigation)}
